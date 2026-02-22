@@ -1,0 +1,2793 @@
+<!DOCTYPE html><html lang="ru" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="lab2.html">
+      
+      
+        <link rel="next" href="lab4.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/icons/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Лабораторная работа 3 - Разработка web-приложений на языке JavaScript</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no3" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="index.html" title="Разработка web-приложений на языке JavaScript" class="md-header__button md-logo" aria-label="Разработка web-приложений на языке JavaScript" data-md-component="logo">
+      
+  <img src="assets/icons/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Разработка web-приложений на языке JavaScript
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Лабораторная работа 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Разработка web-приложений на языке JavaScript" class="md-nav__button md-logo" aria-label="Разработка web-приложений на языке JavaScript" data-md-component="logo">
+      
+  <img src="assets/icons/logo.png" alt="logo">
+
+    </a>
+    Разработка web-приложений на языке JavaScript
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Описание дисциплины
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="domain.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Предметная область
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторные работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторные работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 3
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lab3.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dom-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объектная модель документа. Использование DOM для доступа к элементам веб-страницы.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.0. Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-no3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Место лабораторной работы №3 в проекте семестра
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-dom-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. DOM: объектная модель документа и роль document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-dom-getelementbyid-queryselector-queryselectorall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Получение элементов DOM: getElementById, querySelector, querySelectorAll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-dom-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Изменение содержимого, атрибутов и классов DOM-элементов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-dom-createelement-appendchild-append" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Создание DOM-узлов: createElement, appendChild, append
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-renderlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Очистка и перерисовка списка: функция renderList
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7. Удаление узлов: remove() и корректная логика удаления
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8. События и обработчики: как интерфейс управляет логикой
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-dom-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.9. Делегирование событий (расширение DOM-раздела, обзорно)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.10. Данные предметной области: что это и как они моделируются
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.11. Почему данные хранятся в виде массива объектов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.12. Функции обработки данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-filter-find-sort-reduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13. Методы обработки данных: filter, find, sort, reduce
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.13. Методы обработки данных: filter, find, sort, reduce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1131-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13.1. Фильтрация (filter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1132-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13.2. Поиск (find)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1133-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13.3. Сортировка (sort)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1134-reduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13.4. Агрегация (reduce)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14. Как всё связывается: “данные → функции → DOM → события → состояние”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.14. Как всё связывается: “данные → функции → DOM → события → состояние”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.1. Данные предметной области хранятся в виде массива объектов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1142" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.2. Реализованы функции обработки данных (фильтрация/поиск/сортировка/агрегация)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1143-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.3. Интерфейс формируется/обновляется через DOM (создание/удаление узлов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1144" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.4. Обработчики событий управляют состоянием интерфейса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1145" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.5. Логика выделена в модули
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.15. Основы модульности
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.15. Основы модульности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1151-es-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.15.1. Минимальная модульность без ES-модулей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.15.2. Пример структуры файлов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Практические задания по блоку
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Практические задания по блоку">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Смысл лабораторной работы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевой результат
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Задания на закрепление теоретического материала (выполнить до работы с предметной областью)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Задания на закрепление теоретического материала (выполнить до работы с предметной областью)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. Блок A — функции
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2. Блок B — массивы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.3. Блок C — объекты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.4. Блок D — методы обработки данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.5. Блок E — основы модульности
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Исходные данные (предметная область)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Модульность проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Данные предметной области как массив объектов (обязательное)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Функции обработки данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Формирование списка через DOM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. События и управление состоянием интерфейса
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-1-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Итоговая задача: “Интерактивный список записей” (ЛР1 → ЛР2 → ЛР3)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Итоговая задача: “Интерактивный список записей” (ЛР1 → ЛР2 → ЛР3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-indexhtml-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Модификация верстки index.html (UI управления + список + сообщения)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Требования к логике и архитектуре
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Обязательные сценарии итоговой задачи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Требования к сдаче
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Для выполнения требуется
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Запрет
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Контрольные вопросы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Чек-лист для самопроверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Шаблон отчёта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="passport.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Пример паспорта дисциплины
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="requirements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования для оформления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="questions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Вопросы к зачету
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dom-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Объектная модель документа. Использование DOM для доступа к элементам веб-страницы.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.0. Цель работы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-no3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Место лабораторной работы №3 в проекте семестра
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-dom-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. DOM: объектная модель документа и роль document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-dom-getelementbyid-queryselector-queryselectorall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Получение элементов DOM: getElementById, querySelector, querySelectorAll
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-dom-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Изменение содержимого, атрибутов и классов DOM-элементов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-dom-createelement-appendchild-append" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Создание DOM-узлов: createElement, appendChild, append
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-renderlist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Очистка и перерисовка списка: функция renderList
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7. Удаление узлов: remove() и корректная логика удаления
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8. События и обработчики: как интерфейс управляет логикой
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-dom-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.9. Делегирование событий (расширение DOM-раздела, обзорно)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.10. Данные предметной области: что это и как они моделируются
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.11. Почему данные хранятся в виде массива объектов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.12. Функции обработки данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-filter-find-sort-reduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13. Методы обработки данных: filter, find, sort, reduce
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.13. Методы обработки данных: filter, find, sort, reduce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1131-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13.1. Фильтрация (filter)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1132-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13.2. Поиск (find)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1133-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13.3. Сортировка (sort)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1134-reduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13.4. Агрегация (reduce)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14. Как всё связывается: “данные → функции → DOM → события → состояние”
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.14. Как всё связывается: “данные → функции → DOM → события → состояние”">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.1. Данные предметной области хранятся в виде массива объектов
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1142" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.2. Реализованы функции обработки данных (фильтрация/поиск/сортировка/агрегация)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1143-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.3. Интерфейс формируется/обновляется через DOM (создание/удаление узлов)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1144" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.4. Обработчики событий управляют состоянием интерфейса
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1145" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14.5. Логика выделена в модули
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.15. Основы модульности
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.15. Основы модульности">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1151-es-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.15.1. Минимальная модульность без ES-модулей
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1152" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.15.2. Пример структуры файлов
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Практические задания по блоку
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Практические задания по блоку">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Смысл лабораторной работы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ключевой результат
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Задания на закрепление теоретического материала (выполнить до работы с предметной областью)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Задания на закрепление теоретического материала (выполнить до работы с предметной областью)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. Блок A — функции
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2. Блок B — массивы
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.3. Блок C — объекты
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.4. Блок D — методы обработки данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#215-e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.5. Блок E — основы модульности
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Исходные данные (предметная область)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Модульность проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Данные предметной области как массив объектов (обязательное)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Функции обработки данных
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-dom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Формирование списка через DOM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. События и управление состоянием интерфейса
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-1-2-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Итоговая задача: “Интерактивный список записей” (ЛР1 → ЛР2 → ЛР3)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Итоговая задача: “Интерактивный список записей” (ЛР1 → ЛР2 → ЛР3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-indexhtml-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Модификация верстки index.html (UI управления + список + сообщения)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Требования к логике и архитектуре
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Обязательные сценарии итоговой задачи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Требования к сдаче
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Для выполнения требуется
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Запрет
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Контрольные вопросы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Чек-лист для самопроверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Шаблон отчёта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no3">Лабораторная работа №3</h1>
+<h2 id="dom-">Объектная модель документа. Использование DOM для доступа к элементам веб-страницы.</h2>
+<h2 id="1">1. Теория</h2>
+<h3 id="10">1.0. Цель работы</h3>
+<p>Сформировать у обучающегося устойчивые навыки работы с <strong>объектной моделью документа (DOM)</strong>: получать элементы web-страницы, читать и изменять их свойства, создавать и удалять узлы, обрабатывать пользовательские события и реализовывать динамическое обновление интерфейса на основе данных предметной области. Дополнительно закрепить работу с <strong>функциями</strong>, <strong>массивами</strong>, <strong>объектами</strong>, методами обработки данных и базовыми принципами <strong>модульности</strong> (разделение кода минимум на 2 файла JavaScript).</p>
+<hr>
+<h3 id="11-no3">1.1. Место лабораторной работы №3 в проекте семестра</h3>
+<p>Лабораторная работа №1 создала основу:</p>
+<ul>
+<li>репозиторий GitHub;</li>
+<li>структура проекта (<code>index.html</code>, <code>style.css</code>, <code>script.js</code>, <code>README.md</code>, <code>passport.md</code>);</li>
+<li>простая верстка под предметную область;</li>
+<li>проверка подключения JavaScript;</li>
+<li>формирование контекста проекта через паспорт предметной области.</li>
+</ul>
+<p>Лабораторная работа №2 развила проект:</p>
+<ul>
+<li>добавила <strong>алгоритмическое ядро</strong>;</li>
+<li>ввела <strong>набор данных предметной области</strong>;</li>
+<li>закрепила работу с <code>const/let</code>, типами данных, операторами, условиями и циклами;</li>
+<li>добавила первичную демонстрацию результатов (консоль + блок вывода на странице);</li>
+<li>подготовила основу для перехода к DOM и пользовательскому интерфейсу.</li>
+</ul>
+<p>Лабораторная работа №3 делает следующий шаг:</p>
+<ul>
+<li>связывает алгоритмическое ядро с интерфейсом через <strong>DOM</strong>;</li>
+<li>вводит принцип: <strong>данные → обработка → отображение</strong>;</li>
+<li>переносит вывод результата из “текста в <code>&lt;pre&gt;</code>” в <strong>динамическое построение интерфейса</strong>;</li>
+<li>закрепляет архитектурную дисциплину: логика оформляется функциями и выносится в отдельные файлы (модули).</li>
+</ul>
+<p>То есть теперь проект становится похожим на реальное web-приложение:</p>
+<ul>
+<li>есть данные предметной области;</li>
+<li>есть функции обработки данных;</li>
+<li>есть интерфейс, который обновляется динамически;</li>
+<li>есть события пользователя (клики/ввод), которые управляют состоянием системы;</li>
+<li>логика разнесена по файлам (модули).</li>
+</ul>
+<hr>
+<h3 id="12-dom-document">1.2. DOM: объектная модель документа и роль <code>document</code></h3>
+<p>DOM (Document Object Model) — это представление HTML-документа в виде <strong>дерева объектов</strong>, которое создаёт браузер при загрузке страницы. Каждый HTML-элемент превращается в узел дерева (node), а JavaScript получает возможность:</p>
+<ul>
+<li>находить нужные элементы;</li>
+<li>читать их содержимое и свойства;</li>
+<li>изменять текст, атрибуты и классы;</li>
+<li>создавать новые элементы и вставлять их на страницу;</li>
+<li>удалять элементы;</li>
+<li>реагировать на события пользователя.</li>
+</ul>
+<p>Ключевой объект в браузерном JavaScript — <code>document</code>.
+Он представляет текущую HTML-страницу и является “точкой входа” к DOM.</p>
+<p>Пример HTML:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">id</span><span class="o">=</span><span class="s">"title"</span><span class="p">&gt;</span>Моя система<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Пример JavaScript-доступа к этому элементу:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">titleEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"title"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">titleEl</span><span class="p">.</span><span class="nx">textContent</span><span class="p">);</span><span class="w"> </span><span class="c1">// "Моя система"</span>
+</code></pre></div>
+<p><strong>Главная идея DOM:</strong>
+JavaScript не “рисует” страницу заново, а <strong>изменяет дерево объектов</strong>, после чего браузер отображает изменения в интерфейсе.</p>
+<hr>
+<h3 id="13-dom-getelementbyid-queryselector-queryselectorall">1.3. Получение элементов DOM: <code>getElementById</code>, <code>querySelector</code>, <code>querySelectorAll</code></h3>
+<p>Для работы с интерфейсом сначала нужно получить ссылки на DOM-элементы.</p>
+<p>Основные методы:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">byId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"list"</span><span class="p">);</span><span class="w">         </span><span class="c1">// один элемент по id</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".card"</span><span class="p">);</span><span class="w">        </span><span class="c1">// первый элемент по CSS-селектору</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">all</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">".card"</span><span class="p">);</span><span class="w">       </span><span class="c1">// коллекция (NodeList) по CSS-селектору</span>
+</code></pre></div>
+<p>Важно понимать различия:</p>
+<ul>
+<li><code>getElementById</code> возвращает <strong>один элемент</strong> (или <code>null</code>, если не найден).</li>
+<li><code>querySelector</code> возвращает <strong>первый подходящий элемент</strong> (или <code>null</code>).</li>
+<li><code>querySelectorAll</code> возвращает <strong>коллекцию</strong> (NodeList), по которой нужно проходить циклом.</li>
+</ul>
+<p>Пример перебора коллекции:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">cards</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s2">".card"</span><span class="p">);</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">cards</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">card</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Практическое правило лабораторной работы:
+ссылки на DOM-элементы обычно объявляются через <code>const</code>, потому что сама ссылка не должна переназначаться.</p>
+<hr>
+<h3 id="14-dom-">1.4. Изменение содержимого, атрибутов и классов DOM-элементов</h3>
+<p>После получения элемента DOM можно изменять его свойства.</p>
+<p><strong>Изменение текста (рекомендуемый безопасный способ):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">messageEl</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Данные обновлены"</span><span class="p">;</span>
+</code></pre></div>
+<p><code>textContent</code> вставляет именно текст, не интерпретируя HTML-теги.</p>
+<p><strong>Вставка HTML-разметки (использовать осторожно):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">containerEl</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&lt;b&gt;Внимание&lt;/b&gt;"</span><span class="p">;</span>
+</code></pre></div>
+<p>В учебной работе предпочтительнее тренировать работу с DOM через <code>createElement</code>, потому что это формирует инженерное понимание интерфейса как структуры узлов, а не как строки.</p>
+<p><strong>Управление CSS-классами:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">messageEl</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">"success"</span><span class="p">);</span>
+<span class="nx">messageEl</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">"error"</span><span class="p">);</span>
+<span class="nx">messageEl</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">toggle</span><span class="p">(</span><span class="s2">"hidden"</span><span class="p">);</span>
+</code></pre></div>
+<hr>
+<h3 id="15-dom-createelement-appendchild-append">1.5. Создание DOM-узлов: <code>createElement</code>, <code>appendChild</code>, <code>append</code></h3>
+<p>DOM-рендеринг — это ситуация, когда список на странице формируется <strong>из массива данных</strong>, а каждый элемент массива превращается в визуальную карточку/строку в интерфейсе.</p>
+<p>Пример: создаём карточку записи.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+<span class="nx">card</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"card"</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"h3"</span><span class="p">);</span>
+<span class="nx">title</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Заявка #1"</span><span class="p">;</span>
+
+<span class="nx">card</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">title</span><span class="p">);</span>
+<span class="nx">listEl</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">card</span><span class="p">);</span>
+</code></pre></div>
+<p>Что важно понять студенту:</p>
+<ul>
+<li><code>createElement</code> создаёт узел, но он “не виден”, пока вы не вставили его в DOM через <code>appendChild/append</code>.</li>
+<li>интерфейс строится <strong>не строками</strong>, а объектами-элементами (узлами DOM).</li>
+<li>каждый DOM-узел может содержать дочерние узлы, формируя иерархию.</li>
+</ul>
+<hr>
+<h3 id="16-renderlist">1.6. Очистка и перерисовка списка: функция <code>renderList</code></h3>
+<p>Классическая схема интерфейса (применяется почти во всех web-приложениях):</p>
+<ol>
+<li>очистить контейнер;</li>
+<li>пройти по данным;</li>
+<li>создать элементы;</li>
+<li>вставить элементы в DOM.</li>
+</ol>
+<p>Пример базовой функции рендера:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">renderList</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">listEl</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span><span class="w"> </span><span class="c1">// очистка контейнера</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">row</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb"> (</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">)`</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">listEl</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">row</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Это основа любой отрисовки списка</strong> (таблица заявок, заказы, задачи, записи журнала и т.п.).
+Функция <code>renderList</code> должна использоваться как единая точка вывода интерфейса: это делает код аккуратным и управляемым.</p>
+<hr>
+<h3 id="17-remove">1.7. Удаление узлов: <code>remove()</code> и корректная логика удаления</h3>
+<p>Удаление может быть двух типов:</p>
+<ul>
+<li>удаление конкретного DOM-элемента;</li>
+<li>обновление DOM через перерисовку списка после удаления записи из данных.</li>
+</ul>
+<p>Пример удаления узла:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">row</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+</code></pre></div>
+<p>Но в учебном проекте правильнее придерживаться принципа:</p>
+<ul>
+<li>сначала удалить данные из массива;</li>
+<li>затем вызвать <code>renderList(...)</code>, чтобы интерфейс отобразил текущее состояние данных.</li>
+</ul>
+<p>Так студент формирует правильную связь:</p>
+<blockquote>
+<p>данные — источник истины, DOM — представление данных.</p>
+</blockquote>
+<hr>
+<h3 id="18">1.8. События и обработчики: как интерфейс управляет логикой</h3>
+<p>Взаимодействие пользователя с интерфейсом происходит через события:</p>
+<ul>
+<li><code>click</code> — нажатие;</li>
+<li><code>input</code> — ввод в поле;</li>
+<li><code>change</code> — изменение значения;</li>
+<li><code>submit</code> — отправка формы (в этой ЛР формы используются минимально и без углубления).</li>
+</ul>
+<p>Пример:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">btnAll</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">renderList</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Ключевой принцип:
+пользователь не “выполняет код”, он <strong>создаёт событие</strong>, а программа реагирует обработчиком.</p>
+<hr>
+<h3 id="19-dom-">1.9. Делегирование событий (расширение DOM-раздела, обзорно)</h3>
+<p>Если карточек много, можно не ставить обработчик на каждую кнопку внутри карточек, а поставить один обработчик на контейнер списка и определять, по чему именно кликнули.</p>
+<p>Пример:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">listEl</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">action</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"remove"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">removeById</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">renderList</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>Для ЛР-3 это <strong>не обязательно</strong>, но как “профессиональный акцент” полезно понимать идею: один обработчик на контейнер вместо множества обработчиков на однотипных элементах.</p>
+<hr>
+<h3 id="110">1.10. Данные предметной области: что это и как они моделируются</h3>
+<p>Предметная область — это контекст системы (например: Service Desk, заказы, студенты, склад, заявки, расписание и т.д.).</p>
+<p><strong>Данные предметной области</strong> — это конкретные записи этой области:</p>
+<ul>
+<li>заявка;</li>
+<li>заказ;</li>
+<li>задача;</li>
+<li>запись журнала;</li>
+<li>инцидент;</li>
+<li>заявка на справку;</li>
+<li>и т.п.</li>
+</ul>
+<p>В коде такие записи моделируются как <strong>объекты</strong>, потому что объект хранит связанные поля в одной структуре.</p>
+<p>Пример одной записи:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Не работает принтер"</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w"> </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="s2">"2026-02-10"</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+<hr>
+<h3 id="111">1.11. Почему данные хранятся в виде массива объектов</h3>
+<p>Потому что:</p>
+<ul>
+<li><strong>одна запись</strong> = один объект (с полями);</li>
+<li><strong>много записей</strong> = массив объектов.</li>
+</ul>
+<p>Пример: “заявки” (адаптировать под любую предметную область):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Не работает принтер"</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">  </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="s2">"2026-02-10"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Настроить почту"</span><span class="p">,</span><span class="w">     </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">800</span><span class="p">,</span><span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w"> </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="s2">"2026-02-11"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Сбой сети"</span><span class="p">,</span><span class="w">           </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1500</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">  </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="s2">"2026-02-12"</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
+</code></pre></div>
+<p>Почему это правильная форма:</p>
+<ul>
+<li>массив даёт порядок и перебор (<code>for</code>, <code>for..of</code>, <code>filter</code>, <code>map</code>);</li>
+<li>объект даёт структуру и смысл полей (<code>item.status</code>, <code>item.value</code>).</li>
+</ul>
+<hr>
+<h3 id="112">1.12. Функции обработки данных</h3>
+<p>Если писать логику прямо внутри обработчиков кнопок, получится высокая связанность и “хаос”:</p>
+<ul>
+<li>сложно читать;</li>
+<li>сложно отлаживать;</li>
+<li>сложно расширять.</li>
+</ul>
+<p>Правильный подход:</p>
+<ul>
+<li>обработчик события (UI) вызывает функцию обработки данных;</li>
+<li>функция возвращает результат;</li>
+<li>UI отображает результат через DOM.</li>
+</ul>
+<p>Таким образом формируется инженерный стиль:</p>
+<blockquote>
+<p>UI-слой (DOM + события) отделён от логики обработки данных.</p>
+</blockquote>
+<hr>
+<h3 id="113-filter-find-sort-reduce">1.13. Методы обработки данных: <code>filter</code>, <code>find</code>, <code>sort</code>, <code>reduce</code></h3>
+<p>В ЛР-3 допускается и рекомендуется применять методы массивов, потому что они дают компактный и ясный код обработки данных.</p>
+<hr>
+<h4 id="1131-filter">1.13.1. Фильтрация (<code>filter</code>)</h4>
+<p>Отобрать только NEW:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">filterByStatus</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">status</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h4 id="1132-find">1.13.2. Поиск (<code>find</code>)</h4>
+<p>Найти запись по <code>id</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">findById</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h4 id="1133-sort">1.13.3. Сортировка (<code>sort</code>)</h4>
+<p>Сортировать по <code>value</code> по убыванию:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">sortByValueDesc</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">slice</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">copy</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">copy</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Важно:</p>
+<ul>
+<li><code>sort</code> меняет массив “на месте”, поэтому создаём копию через <code>slice()</code>.</li>
+</ul>
+<hr>
+<h4 id="1134-reduce">1.13.4. Агрегация (<code>reduce</code>)</h4>
+<p>Посчитать статистику:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">buildStats</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">acc</span><span class="p">.</span><span class="nx">totalCount</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">acc</span><span class="p">.</span><span class="nx">sumValue</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">acc</span><span class="p">.</span><span class="nx">maxValue</span><span class="p">)</span><span class="w"> </span><span class="nx">acc</span><span class="p">.</span><span class="nx">maxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"new"</span><span class="p">)</span><span class="w"> </span><span class="nx">acc</span><span class="p">.</span><span class="nx">newCount</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">acc</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">totalCount</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">sumValue</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">maxValue</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">newCount</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr>
+<h3 id="114-dom">1.14. Как всё связывается: “данные → функции → DOM → события → состояние”</h3>
+<p>Это ключевой “проектный” смысл ЛР-3.</p>
+<hr>
+<h4 id="1141">1.14.1. Данные предметной области хранятся в виде массива объектов</h4>
+<ul>
+<li>массив <code>items</code>;</li>
+<li>каждый объект — запись предметной области.</li>
+</ul>
+<hr>
+<h4 id="1142">1.14.2. Реализованы функции обработки данных (фильтрация/поиск/сортировка/агрегация)</h4>
+<ul>
+<li>фильтрация: <code>filterByStatus</code>, <code>filterByMinValue</code>;</li>
+<li>поиск: <code>findById</code>;</li>
+<li>сортировка: <code>sortByValueDesc</code>;</li>
+<li>агрегация: <code>buildStats</code>.</li>
+</ul>
+<hr>
+<h4 id="1143-dom">1.14.3. Интерфейс формируется/обновляется через DOM (создание/удаление узлов)</h4>
+<ul>
+<li>функция <code>renderList(itemsToRender)</code> формирует интерфейс;</li>
+<li>карточки создаются через <code>createElement</code>;</li>
+<li>контейнер очищается и перерисовывается;</li>
+<li>удаление производится либо через <code>remove()</code>, либо через перерисовку после изменения данных.</li>
+</ul>
+<hr>
+<h4 id="1144">1.14.4. Обработчики событий управляют состоянием интерфейса</h4>
+<ul>
+<li>кнопки вызывают нужную функцию обработки данных, затем <code>renderList</code>;</li>
+<li>поле ввода влияет на фильтрацию;</li>
+<li>добавление/удаление изменяет массив и приводит к обновлению списка.</li>
+</ul>
+<hr>
+<h4 id="1145">1.14.5. Логика выделена в модули</h4>
+<p>Принцип разделения ответственности:</p>
+<ul>
+<li><code>data.js</code> — хранит набор данных предметной области (массив объектов);</li>
+<li><code>logic.js</code> — хранит функции обработки данных (filter/find/sort/reduce и т.д.);</li>
+<li><code>script.js</code> — связывает DOM, события и вызовы функций (UI-слой).</li>
+</ul>
+<hr>
+<h3 id="115">1.15. Основы модульности</h3>
+<h4 id="1151-es-">1.15.1. Минимальная модульность без ES-модулей</h4>
+<p>Чтобы не вводить отдельную тему <code>type="module"</code>, модульность реализуется через разделение по файлам и порядок подключения.</p>
+<p><strong>index.html</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"data.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"logic.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Тогда:</p>
+<ul>
+<li><code>items</code> из <code>data.js</code> будет доступен в <code>script.js</code>;</li>
+<li>функции из <code>logic.js</code> также будут доступны.</li>
+</ul>
+<p><strong>Правило:</strong> порядок подключения важен.</p>
+<hr>
+<h4 id="1152">1.15.2. Пример структуры файлов</h4>
+<div class="highlight"><pre><span></span><code>data.js   → const items = [...]
+logic.js  → функции filter/find/sort/reduce
+script.js → DOM, события, renderList
+</code></pre></div>
+<hr>
+<h2 id="2">2. Практические задания по блоку</h2>
+<p>Цель: закрепить работу с DOM и событиями, а также применить <strong>функции</strong>, <strong>массивы</strong>, <strong>объекты</strong>, методы обработки данных и основы <strong>модульности</strong> на материале <strong>своей предметной области</strong>.</p>
+<hr>
+<h3 id="_1">Смысл лабораторной работы</h3>
+<p>Переход от “алгоритмов в консоли” к “алгоритмам, управляемым интерфейсом”: данные предметной области представлены как массив объектов, обработка данных оформляется функциями, а интерфейс формируется и обновляется через DOM на основе пользовательских событий.</p>
+<hr>
+<h3 id="_2">Ключевой результат</h3>
+<p>Интерактивная страница, в которой:</p>
+<ul>
+<li>данные предметной области хранятся в виде массива объектов;</li>
+<li>реализованы функции обработки данных (фильтрация/поиск/сортировка/агрегация);</li>
+<li>интерфейс формируется/обновляется через DOM (создание/удаление узлов);</li>
+<li>обработчики событий управляют состоянием интерфейса;</li>
+<li>логика выделена в модули (минимум 2 файла JS).</li>
+</ul>
+<hr>
+<h3 id="21">2.1. Задания на закрепление теоретического материала (выполнить до работы с предметной областью)</h3>
+<p>Данный блок выполняется в <strong>отдельном файле <code>practice-lr3.js</code></strong> (или в конце <code>script.js</code>), чтобы студент мог продемонстрировать понимание теории <strong>до</strong> использования своих данных предметной области.</p>
+<p>Требования к оформлению:</p>
+<ul>
+<li>каждая задача должна завершаться <code>console.log(...)</code> с выводом результата;</li>
+<li>запрещены регулярные выражения и асинхронность (fetch/async/await) в этой лабораторной работе;</li>
+<li>допускается использование <code>filter</code>, <code>find</code>, <code>sort</code>, <code>reduce</code>.</li>
+</ul>
+<hr>
+<h4 id="211-a">2.1.1. Блок A — функции</h4>
+<p><strong>Задача A1.</strong><br>
+Создать функцию <code>calcTotal(a, b)</code>, которая:</p>
+<ul>
+<li>принимает два числа <code>a</code> и <code>b</code>;</li>
+<li>возвращает их сумму;</li>
+<li>выводит результат в консоль.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li><code>calcTotal(10, 5)</code> возвращает <code>15</code> и выводится в консоль.</li>
+</ul>
+<hr>
+<p><strong>Задача A2.</strong><br>
+Создать функцию <code>formatRecord(id, title, status)</code>, которая:</p>
+<ul>
+<li>принимает <code>id</code> (number), <code>title</code> (string), <code>status</code> (string);</li>
+<li>возвращает строку формата: <code>"#&lt;id&gt; &lt;title&gt; [&lt;status&gt;]"</code>;</li>
+<li>продемонстрировать вызов функции в консоли.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>для входа <code>formatRecord(3, "Тестовая запись", "new")</code> возвращается строка <code>"#3 Тестовая запись [new]"</code>.</li>
+</ul>
+<hr>
+<h4 id="212-b">2.1.2. Блок B — массивы</h4>
+<p><strong>Задача B1.</strong><br>
+Создать массив чисел <code>values = [1200, 500, 800, 1500]</code> и:</p>
+<ul>
+<li>посчитать сумму всех элементов циклом <code>for</code>;</li>
+<li>вывести сумму в консоль.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>корректная сумма <code>4000</code>.</li>
+</ul>
+<hr>
+<p><strong>Задача B2.</strong><br>
+На том же массиве <code>values</code>:</p>
+<ul>
+<li>отфильтровать значения <code>&gt;= 800</code> с помощью <code>filter</code>;</li>
+<li>вывести новый массив в консоль.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li><code>[1200, 800, 1500]</code>.</li>
+</ul>
+<hr>
+<h4 id="213-c">2.1.3. Блок C — объекты</h4>
+<p><strong>Задача C1.</strong><br>
+Создать объект <code>record</code>, содержащий поля:</p>
+<ul>
+<li><code>id</code> (number),</li>
+<li><code>title</code> (string),</li>
+<li><code>value</code> (number),</li>
+<li><code>status</code> (string),</li>
+<li><code>createdAt</code> (string).</li>
+</ul>
+<p>Вывести объект в консоль и затем:</p>
+<ul>
+<li>изменить <code>status</code> на другое значение;</li>
+<li>снова вывести объект в консоль.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>видно изменение поля <code>status</code> без переназначения переменной (через <code>const</code> допускается изменение содержимого).</li>
+</ul>
+<hr>
+<p><strong>Задача C2.</strong><br>
+Создать функцию <code>isNew(record)</code>, которая:</p>
+<ul>
+<li>принимает объект записи;</li>
+<li>возвращает <code>true</code>, если <code>record.status === "new"</code>, иначе <code>false</code>;</li>
+<li>продемонстрировать работу функции в консоли на 2 объектах с разными статусами.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>корректные <code>true/false</code>.</li>
+</ul>
+<hr>
+<h4 id="214-d">2.1.4. Блок D — методы обработки данных</h4>
+<p><strong>Задача D1.</strong><br>
+Создать массив объектов <code>testItems</code> из 4 записей (произвольных) и:</p>
+<ul>
+<li>найти запись с заданным <code>id</code> через <code>find</code>;</li>
+<li>вывести найденный объект в консоль (или <code>null</code>, если не найдено).</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>найден правильный объект.</li>
+</ul>
+<hr>
+<p><strong>Задача D2.</strong><br>
+На массиве <code>testItems</code>:</p>
+<ul>
+<li>посчитать статистику через <code>reduce</code>: количество записей и сумму <code>value</code>;</li>
+<li>вывести объект статистики в консоль.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>объект вида <code>{ totalCount: ..., sumValue: ... }</code> с корректными значениями.</li>
+</ul>
+<hr>
+<h4 id="215-e">2.1.5. Блок E — основы модульности</h4>
+<p><strong>Задача E1.</strong><br>
+Создать файлы <code>data.js</code>, <code>logic.js</code>, <code>script.js</code> (даже если они пока пустые) и подключить их в <code>index.html</code> в порядке:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"data.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"logic.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+````
+
+**Ожидаемый результат:**
+
+* страница открывается без ошибок в консоли.
+
+---
+
+**Задача E2.**
+В `logic.js` создать функцию `helloFromLogic()`, которая возвращает строку `"logic works"`.
+
+В `script.js`:
+
+* вызвать `helloFromLogic()` и вывести результат в консоль.
+
+**Ожидаемый результат:**
+
+* в консоли выводится `"logic works"`.
+
+---
+
+#### 2.1.6. Блок F — DOM (2 задачи)
+
+**Задача F1.**
+В `index.html` создать элемент:
+
+```html
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"message"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>В <code>script.js</code>:</p>
+<ul>
+<li>получить его через <code>getElementById</code>;</li>
+<li>установить <code>textContent = "DOM работает"</code>.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>на странице отображается текст <code>"DOM работает"</code>.</li>
+</ul>
+<hr>
+<p><strong>Задача F2.</strong>
+В <code>index.html</code> создать контейнер:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"demoList"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>В <code>script.js</code>:</p>
+<ul>
+<li>создать 3 элемента <code>&lt;p&gt;</code> через <code>createElement</code>;</li>
+<li>заполнить их текстом;</li>
+<li>вставить в <code>#demoList</code> через <code>appendChild</code>.</li>
+</ul>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>на странице появляются 3 строки (3 параграфа).</li>
+</ul>
+<hr>
+<h3 id="22">2.2. Исходные данные (предметная область)</h3>
+<p>Для выполнения лабораторной работы используется предметная область, закреплённая за студентом на семестр (см. перечень в ЛМС / паспорт предметной области <code>passport.md</code>).</p>
+<p>Требования к исходным данным:</p>
+<ul>
+<li>предметная область должна быть та же, что и в ЛР-1 и ЛР-2;</li>
+<li>данные должны быть осмысленными (соответствовать предметной области, а не “item1/item2”);</li>
+<li>в данных должны присутствовать разные статусы (минимум 2), обязательно наличие <code>"new"</code>.</li>
+</ul>
+<hr>
+<h3 id="23">2.3. Модульность проекта</h3>
+<p><strong>Задание:</strong>
+Организовать код проекта в виде модулей (разделение по файлам), чтобы отделить данные, логику обработки и работу с DOM.</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li>
+<p>В корне проекта создать (или добавить) файлы:</p>
+</li>
+<li>
+<p><code>data.js</code></p>
+</li>
+<li><code>logic.js</code></li>
+<li><code>script.js</code></li>
+<li>В <code>index.html</code> подключить файлы <strong>в правильном порядке</strong>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"data.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"logic.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"script.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol>
+<li>Убедиться, что в консоли <strong>нет ошибок</strong>, связанных с неопределёнными переменными/функциями (например, <code>items is not defined</code>).</li>
+</ol>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>проект запускается;</li>
+<li>данные и функции доступны в <code>script.js</code>;</li>
+<li>нет ошибок подключения.</li>
+</ul>
+<hr>
+<h3 id="24">2.4. Данные предметной области как массив объектов (обязательное)</h3>
+<p><strong>Задание:</strong>
+Создать набор данных предметной области, который будет источником для построения интерфейса.</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li>В файле <code>data.js</code> создать массив <code>items</code>, содержащий <strong>минимум 8 объектов</strong>.</li>
+<li>
+<p>Каждый объект обязан иметь поля:</p>
+</li>
+<li>
+<p><code>id</code> (number)</p>
+</li>
+<li><code>title</code> (string)</li>
+<li><code>value</code> (number)</li>
+<li><code>status</code> (string)</li>
+<li>
+<p><code>createdAt</code> (string <code>YYYY-MM-DD</code>)</p>
+</li>
+<li>
+<p>Значения должны соответствовать предметной области студента.</p>
+</li>
+</ol>
+<p>Пример структуры (адаптировать под свою область):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Не работает принтер"</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1200</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w"> </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="s2">"2026-02-10"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Настроить почту"</span><span class="p">,</span><span class="w">      </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">800</span><span class="p">,</span><span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"done"</span><span class="p">,</span><span class="w"> </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="s2">"2026-02-11"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">"Сбой сети"</span><span class="p">,</span><span class="w">           </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="mf">1500</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w"> </span><span class="nx">createdAt</span><span class="o">:</span><span class="w"> </span><span class="s2">"2026-02-12"</span><span class="w"> </span><span class="p">}</span>
+<span class="p">];</span>
+</code></pre></div>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li><code>console.log(items)</code> выводит массив объектов;</li>
+<li>в наборе есть разные статусы, включая <code>"new"</code>.</li>
+</ul>
+<hr>
+<h3 id="25">2.5. Функции обработки данных</h3>
+<p><strong>Задание:</strong>
+Вынести обработку данных в отдельные функции в файле <code>logic.js</code>.</p>
+<p><strong>Требования:</strong></p>
+<p>В файле <code>logic.js</code> реализовать функции:</p>
+<ol>
+<li>Фильтрация по статусу:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">filterByStatus</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">status</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">status</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Поиск по <code>id</code>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">findById</span><span class="p">(</span><span class="nx">items</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">item</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Сортировка по <code>value</code> по убыванию (через копию массива):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">sortByValueDesc</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">slice</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">copy</span><span class="p">.</span><span class="nx">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">copy</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>Агрегация статистики (через <code>reduce</code>):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">buildStats</span><span class="p">(</span><span class="nx">items</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">items</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span><span class="w"> </span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">acc</span><span class="p">.</span><span class="nx">totalCount</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">acc</span><span class="p">.</span><span class="nx">sumValue</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nx">acc</span><span class="p">.</span><span class="nx">maxValue</span><span class="p">)</span><span class="w"> </span><span class="nx">acc</span><span class="p">.</span><span class="nx">maxValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"new"</span><span class="p">)</span><span class="w"> </span><span class="nx">acc</span><span class="p">.</span><span class="nx">newCount</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">acc</span><span class="p">;</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">totalCount</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">sumValue</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">maxValue</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="nx">newCount</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>функции вызываются из <code>script.js</code>;</li>
+<li>логика обработки данных не дублируется в обработчиках кнопок;</li>
+<li>результаты функций можно вывести в консоль для проверки.</li>
+</ul>
+<hr>
+<h3 id="26-dom">2.6. Формирование списка через DOM</h3>
+<p><strong>Задание:</strong>
+Реализовать отрисовку списка записей не строкой в <code>&lt;pre&gt;</code>, а через создание DOM-узлов.</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li>В <code>index.html</code> создать контейнер списка:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"list"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol>
+<li>
+<p>В <code>script.js</code> реализовать функцию <code>renderList(itemsToRender)</code>, которая:</p>
+</li>
+<li>
+<p>очищает контейнер списка;</p>
+</li>
+<li>для каждого элемента создаёт DOM-узел (карточку/строку);</li>
+<li>отображает минимум: <code>id</code>, <code>title</code>, <code>value</code>, <code>status</code>, <code>createdAt</code>;</li>
+<li>добавляет кнопку “Удалить” внутри карточки (подготовка к удалению).</li>
+</ol>
+<p>Пример (структуру можно менять под свой дизайн, но принцип сохраняется):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">renderList</span><span class="p">(</span><span class="nx">itemsToRender</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">listEl</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">""</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">itemsToRender</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">card</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"card"</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">h3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"h3"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">h3</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">title</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"p"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">info</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`id=</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="si">}</span><span class="sb"> | value=</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">value</span><span class="si">}</span><span class="sb"> | status=</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb"> | createdAt=</span><span class="si">${</span><span class="nx">item</span><span class="p">.</span><span class="nx">createdAt</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">btnRemove</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"button"</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">btnRemove</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Удалить"</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">btnRemove</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"remove"</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">btnRemove</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">card</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">h3</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">card</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">info</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">card</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">btnRemove</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">listEl</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">card</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>список отображается как набор карточек/строк;</li>
+<li>на странице присутствуют созданные DOM-узлы.</li>
+</ul>
+<hr>
+<h3 id="27">2.7. События и управление состоянием интерфейса</h3>
+<p><strong>Задание:</strong>
+Создать кнопки управления и реализовать обработчики событий, которые изменяют отображаемый список и выводят статистику.</p>
+<p><strong>Требования:</strong></p>
+<ol>
+<li>
+<p>В <code>index.html</code> добавить кнопки:</p>
+</li>
+<li>
+<p>“Показать все”</p>
+</li>
+<li>“Показать NEW”</li>
+<li>“Сортировать по value ↓”</li>
+<li>“Показать статистику”</li>
+</ol>
+<p>Пример:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">"btnAll"</span><span class="p">&gt;</span>Показать все<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">"btnNew"</span><span class="p">&gt;</span>Показать NEW<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">"btnSort"</span><span class="p">&gt;</span>Сортировать по value ↓<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">"btnStats"</span><span class="p">&gt;</span>Показать статистику<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"message"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol>
+<li>
+<p>В <code>script.js</code> реализовать обработчики:</p>
+</li>
+<li>
+<p><code>btnAll</code> → <code>renderList(items)</code></p>
+</li>
+<li><code>btnNew</code> → <code>renderList(filterByStatus(items, "new"))</code></li>
+<li><code>btnSort</code> → <code>renderList(sortByValueDesc(items))</code></li>
+<li><code>btnStats</code> → вычислить <code>buildStats(items)</code> и вывести результат в <code>#message</code> через <code>textContent</code></li>
+</ol>
+<p>Пример вывода статистики:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">buildStats</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+<span class="nx">messageEl</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span>
+<span class="w">  </span><span class="sb">`Всего записей: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">totalCount</span><span class="si">}</span><span class="sb">\n`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`Сумма value: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">sumValue</span><span class="si">}</span><span class="sb">\n`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`Максимум value: </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">maxValue</span><span class="si">}</span><span class="sb">\n`</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="sb">`Количество status="new": </span><span class="si">${</span><span class="nx">stats</span><span class="p">.</span><span class="nx">newCount</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Ожидаемый результат:</strong></p>
+<ul>
+<li>кнопки работают;</li>
+<li>список и статистика меняются без перезагрузки страницы;</li>
+<li>данные отображаются через DOM.</li>
+</ul>
+<hr>
+<h2 id="3-1-2-3">3. Итоговая задача: “Интерактивный список записей” (ЛР1 → ЛР2 → ЛР3)</h2>
+<p>Цель: развить интерфейс проекта семестра, превратив данные и алгоритмы из ЛР-2 в полноценный интерактивный UI через DOM.</p>
+<hr>
+<h3 id="31-indexhtml-ui">3.1. Модификация верстки <code>index.html</code> (UI управления + список + сообщения)</h3>
+<p>В существующую верстку проекта добавить:</p>
+<ol>
+<li>Блок управления (кнопки + область сообщений <code>#message</code>).</li>
+<li>Контейнер списка <code>#list</code>.</li>
+<li>(Рекомендуется) простую стилизацию карточек в <code>style.css</code> (не является главным критерием, но улучшает читаемость).</li>
+</ol>
+<hr>
+<h3 id="32">3.2. Требования к логике и архитектуре</h3>
+<ul>
+<li>данные находятся в <code>data.js</code> (массив объектов);</li>
+<li>обработка данных оформлена функциями в <code>logic.js</code>;</li>
+<li>работа с DOM и событиями выполняется в <code>script.js</code>;</li>
+<li>интерфейс обновляется через <code>renderList(...)</code>;</li>
+<li>запрещено дублировать одинаковую обработку данных в нескольких обработчиках (используются функции).</li>
+</ul>
+<hr>
+<h3 id="33">3.3. Обязательные сценарии итоговой задачи</h3>
+<p>Студент обязан продемонстрировать:</p>
+<ol>
+<li>Показ всех записей.</li>
+<li>Фильтрацию по статусу <code>"new"</code>.</li>
+<li>Сортировку по <code>value</code> по убыванию.</li>
+<li>Вывод статистики (totalCount, sumValue, maxValue, newCount).</li>
+<li>Наличие кнопки “Удалить” в карточке (кнопка должна быть создана через DOM и иметь <code>dataset</code> для id).</li>
+</ol>
+<hr>
+<h3 id="34">3.4. Требования к сдаче</h3>
+<p>В одном репозитории должны быть:</p>
+<ul>
+<li>обновлённый <code>index.html</code> (кнопки, <code>#list</code>, <code>#message</code>);</li>
+<li><code>data.js</code> (массив объектов);</li>
+<li><code>logic.js</code> (функции обработки данных);</li>
+<li><code>script.js</code> (DOM + события + renderList);</li>
+<li>при необходимости — уточнение в <code>README.md</code> (что добавлено в ЛР3);</li>
+<li><code>passport.md</code> остаётся и используется дальше.</li>
+</ul>
+<hr>
+<h3 id="35">3.5. Для выполнения требуется</h3>
+<ol>
+<li><strong>Шаблон отчёта</strong>, указанный в описании лабораторной работы.</li>
+<li><strong>Вариант задания</strong>, закреплённый за студентом на семестр и опубликованный в ЛМС.</li>
+<li><strong>Требования к оформлению</strong> — согласно методическим указаниям в ЛМС или соответствующему разделу документации.</li>
+<li><strong>Ссылка на репозиторий</strong>, прикрепляется студентом к отчету.</li>
+</ol>
+<hr>
+<h3 id="36">3.6. Запрет</h3>
+<p>❗ <strong>Запрещается использование систем искусственного интеллекта для выполнения лабораторной работы.</strong></p>
+<p>Работы, выполненные с использованием ИИ, полностью или частично скопированные, а также не сданные, оцениваются в <strong>0 баллов</strong> без возможности доработки.</p>
+<hr>
+<h2 id="4">4. Контрольные вопросы</h2>
+<ol>
+<li>Что такое DOM и почему его называют объектной моделью документа?</li>
+<li>Чем <code>getElementById</code> отличается от <code>querySelector</code>?</li>
+<li>Что возвращает <code>querySelectorAll</code> и как правильно обработать результат?</li>
+<li>Чем <code>textContent</code> отличается от <code>innerHTML</code>?</li>
+<li>Что делает <code>document.createElement()</code> и почему элемент “не виден”, пока его не вставили в DOM?</li>
+<li>Зачем нужна функция <code>renderList</code> и почему нельзя дублировать отрисовку в каждом обработчике?</li>
+<li>Как в обработчике события получить данные из <code>input.value</code>?</li>
+<li>Почему сортировка через <code>sort()</code> требует осторожности и зачем делать копию массива?</li>
+<li>Что делает <code>reduce()</code> и почему он полезен для статистики?</li>
+<li>Зачем разносить проект на <code>data.js</code>, <code>logic.js</code>, <code>script.js</code> и почему важен порядок подключения файлов?</li>
+</ol>
+<hr>
+<h2 id="5-">5. Чек-лист для самопроверки</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Баллы</th>
+<th>Критерии оценки</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><strong>20</strong></td>
+<td>Выполнены <strong>задания на закрепление теории</strong> (блок 2.1: по 2 задачи на каждый блок A–F, результаты выведены в консоль/на страницу, ошибок нет); реализованы модули (<code>data.js</code>, <code>logic.js</code>, <code>script.js</code>) и корректное подключение; данные предметной области как массив объектов (8+); функции фильтрации/поиска/сортировки/агрегации вынесены в <code>logic.js</code>; список формируется через DOM (<code>createElement</code>, <code>append/appendChild</code>), есть кнопка “Удалить” в карточке с использованием <code>dataset</code>; реализованы обработчики кнопок управления (все сценарии 2.7) и корректное обновление UI через <code>renderList(...)</code>; статистика выводится в <code>#message</code> через <code>textContent</code>; изменения зафиксированы в GitHub (коммиты и актуальные файлы).</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>16–19</strong></td>
+<td>Теоретический блок 2.1 выполнен <strong>почти полностью</strong> (допущены 1–2 недочёта: не выведен результат одной задачи, есть незначительная ошибка оформления), и/или один из ключевых сценариев предметной части реализован частично (например, сортировка/статистика/кнопка удаления/фильтрация NEW), и/или есть небольшие логические недочёты (например, сортировка меняет исходный массив без копии, вывод статистики не полностью структурирован), при этом модульность и DOM-рендер в целом присутствуют.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>12–15</strong></td>
+<td>Теоретический блок 2.1 выполнен <strong>частично</strong> (выполнены не все блоки A–F или нет демонстрации результатов), и/или предметная часть работает фрагментарно: DOM-отрисовка есть и данные корректны, но модульность нарушена (всё в одном файле) <strong>или</strong> функции обработки данных дублируются в обработчиках <strong>или</strong> реализовано менее 3 обязательных сценариев из 2.7; кнопка “Удалить” может быть отсутствовать или не привязана через <code>dataset</code>.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>8–11</strong></td>
+<td>Есть получение элементов DOM и отдельные обработчики событий, но теоретический блок 2.1 не выполнен или формальный; список не формируется через <code>createElement</code> (например, выводится одним блоком через <code>textContent/innerHTML</code>), нет устойчивой функции <code>renderList</code>, статистика неструктурирована или отсутствует, привязка к предметной области слабая (данные не отражают предметную область или слишком условные).</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>1–7</strong></td>
+<td>Формальный шаблон без рабочей логики: отсутствует теоретический блок 2.1, нет модульности, нет функций обработки данных, нет корректного DOM-рендера, кнопки не работают или вызывают ошибки, данные не оформлены как массив объектов.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><strong>0</strong></td>
+<td>Работа не сдана / неработоспособна / выполнена с использованием ИИ.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6">6. Шаблон отчёта</h2>
+<p>👉 <a href="assets/files/LR3%20%28Shablon%29.docx">Скачать шаблон отчёта</a></p>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "content.image.zoom", "navigation.top", "navigation.tracking", "toc.follow"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="assets/js/mermaid-init.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
