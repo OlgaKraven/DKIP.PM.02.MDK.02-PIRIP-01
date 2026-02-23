@@ -1,0 +1,3458 @@
+<!DOCTYPE html><html lang="ru" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="domain.html">
+      
+      
+        <link rel="next" href="lab2.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/icons/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Лабораторная работа 1 - Проектирование и разработка интерфейсов пользователя</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no1-html-web-" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="index.html" title="Проектирование и разработка интерфейсов пользователя" class="md-header__button md-logo" aria-label="Проектирование и разработка интерфейсов пользователя" data-md-component="logo">
+      
+  <img src="assets/icons/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Проектирование и разработка интерфейсов пользователя
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Лабораторная работа 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Проектирование и разработка интерфейсов пользователя" class="md-nav__button md-logo" aria-label="Проектирование и разработка интерфейсов пользователя" data-md-component="logo">
+      
+  <img src="assets/icons/logo.png" alt="logo">
+
+    </a>
+    Проектирование и разработка интерфейсов пользователя
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Описание дисциплины
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="domain.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Предметная область
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторные работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторные работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lab1.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-html-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. HTML-документ и роль разметки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Каркас документа и метаданные (head)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Каркас документа и метаданные (head)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doctype-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;!DOCTYPE html&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-langru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;html lang="ru"&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;head&gt; … &lt;/head&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-charsetutf-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta charset="utf-8"&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-nameviewport-contentwidthdevice-width-initial-scale10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;title&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-namedescription-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="description" content="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-nameauthor-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="author" content="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-relicon-href" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;link rel="icon" href="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные (одно на выбор)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Дополнительные (одно на выбор)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-href" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;base href="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-namekeywords-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="keywords" content="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-nametheme-color-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="theme-color" content="#..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Семантическая структура страницы (body)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Семантическая структура страницы (body)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;header&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;nav&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-idmain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;main id="main"&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;section&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#article" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;article&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aside" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;aside&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#footer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;footer&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Заголовки, текст и смысловые теги
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. Заголовки, текст и смысловые теги">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Заголовки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Абзац
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#br" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;br&gt;
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="&lt;br&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;hr&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;strong&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#em" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;em&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;mark&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#small" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;small&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub-sup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;sub&gt; и &lt;sup&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;abbr&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;time&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;cite&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;q&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockquote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;blockquote&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;pre&gt;&lt;code&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;kbd&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;samp&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;var&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#span" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;span&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#div" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;div&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Списки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5. Списки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;ul&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;ol&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вложенный список
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;dl&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Ссылки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6. Ссылки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Внешняя
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Внутренняя
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Наверх
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mailto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mailto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7. Изображения и медиа
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7. Изображения и медиа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;figure&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;picture&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;audio&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;video&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8. Встраивания
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8. Встраивания">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;iframe&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;embed&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;object&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;noscript&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;canvas&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;svg&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.9. Таблица
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.10. Форма (расширенная)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Задание
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Задание">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-html-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Создайте каркас HTML-документа и метаданные (head)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Реализуйте семантическую структуру страницы (body)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Текстовая разметка (контент по предметной области)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Списки (все основные виды)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Ссылки и навигация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Изображения и медиа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. Встраивания и встроенный контент (минимум 2 элемента)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8. Таблица по предметной области (полный набор)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9. Сложная форма (расширенная, “максимум типов”)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-html-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10. HTML-интерактив без JavaScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11. Проверка валидности
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.12. Публикация результата на GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.13. Для выполнения требуется
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Контрольные вопросы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Чек-лист для самопроверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Для выполнения требуется
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Формат сдачи работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Запрет
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Шаблон отчёта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="requirements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования для оформления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-html-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. HTML-документ и роль разметки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Каркас документа и метаданные (head)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. Каркас документа и метаданные (head)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#doctype-html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;!DOCTYPE html&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-langru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;html lang="ru"&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;head&gt; … &lt;/head&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-charsetutf-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta charset="utf-8"&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-nameviewport-contentwidthdevice-width-initial-scale10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#title" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;title&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-namedescription-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="description" content="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-nameauthor-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="author" content="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-relicon-href" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;link rel="icon" href="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Дополнительные (одно на выбор)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Дополнительные (одно на выбор)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base-href" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;base href="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-namekeywords-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="keywords" content="..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#meta-nametheme-color-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;meta name="theme-color" content="#..."&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Семантическая структура страницы (body)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Семантическая структура страницы (body)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#header" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;header&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;nav&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-idmain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;main id="main"&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;section&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#article" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;article&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aside" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;aside&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#footer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;footer&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Заголовки, текст и смысловые теги
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. Заголовки, текст и смысловые теги">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Заголовки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Абзац
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#br" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;br&gt;
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="&lt;br&gt;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;hr&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;strong&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#em" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;em&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;mark&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#small" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;small&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sub-sup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;sub&gt; и &lt;sup&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abbr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;abbr&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;time&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;cite&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;q&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockquote" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;blockquote&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;pre&gt;&lt;code&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;kbd&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#samp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;samp&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;var&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#span" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;span&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#div" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;div&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Списки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5. Списки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ul" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;ul&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;ol&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вложенный список
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;dl&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Ссылки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6. Ссылки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Внешняя
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Внутренняя
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Наверх
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mailto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mailto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tel
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7. Изображения и медиа
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7. Изображения и медиа">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;figure&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;picture&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;audio&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;video&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8. Встраивания
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8. Встраивания">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;iframe&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;embed&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;object&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#noscript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;noscript&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;canvas&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        &lt;svg&gt;
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.9. Таблица
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.10. Форма (расширенная)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Задание
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Задание">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-html-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Создайте каркас HTML-документа и метаданные (head)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Реализуйте семантическую структуру страницы (body)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Текстовая разметка (контент по предметной области)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Списки (все основные виды)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Ссылки и навигация
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Изображения и медиа
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. Встраивания и встроенный контент (минимум 2 элемента)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8. Таблица по предметной области (полный набор)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9. Сложная форма (расширенная, “максимум типов”)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#210-html-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.10. HTML-интерактив без JavaScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.11. Проверка валидности
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.12. Публикация результата на GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.13. Для выполнения требуется
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Контрольные вопросы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Чек-лист для самопроверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Для выполнения требуется
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Формат сдачи работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Запрет
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Шаблон отчёта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no1-html-web-">Лабораторная работа №1 — Применение тегов HTML при создании web-страниц</h1>
+<hr>
+<h2 id="_1">Цель</h2>
+<p>Создать статическую HTML-страницу по индивидуальной предметной области, применив расширенный набор HTML-элементов:
+семантика, контент-разметка, таблицы, медиа, встраивания, интерактивные элементы, расширенная форма, доступность,
+валидация, а также опубликовать результат в GitHub с предоставлением ссылки.</p>
+<hr>
+<h2 id="1">1. Теория</h2>
+<h3 id="11-html-">1.1. HTML-документ и роль разметки</h3>
+<p>HTML (HyperText Markup Language) — язык разметки, предназначенный для описания структуры веб-страницы. HTML-документ состоит
+из разделов <code>head</code> (метаданные) и <code>body</code> (контент страницы). Корректная структура документа обеспечивает правильное отображение в
+браузере, удобство сопровождения и соответствие стандартам.</p>
+<p>HTML-документ делится на:</p>
+<ul>
+<li><code>&lt;head&gt;</code> — метаданные (кодировка, заголовок вкладки, описание, иконка, настройки отображения).</li>
+<li><code>&lt;body&gt;</code> — содержимое страницы, которое видит пользователь.</li>
+</ul>
+<hr>
+<h3 id="12-head">1.2. Каркас документа и метаданные (head)</h3>
+<h4 id="doctype-html"><code>&lt;!DOCTYPE html&gt;</code></h4>
+<p>Назначение: включает стандартный режим HTML5 (без “quirks mode”).
+Пример: всегда первая строка файла.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</code></pre></div>
+<h4 id="html-langru"><code>&lt;html lang="ru"&gt;</code></h4>
+<p>Назначение: корневой элемент документа; <code>lang</code> помогает доступности и корректному выбору языка.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"ru"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="head-head"><code>&lt;head&gt; … &lt;/head&gt;</code></h4>
+<p>Назначение: контейнер метаданных.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+ ...
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="meta-charsetutf-8"><code>&lt;meta charset="utf-8"&gt;</code></h4>
+<p>Назначение: кодировка, чтобы русский текст отображался корректно.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="meta-nameviewport-contentwidthdevice-width-initial-scale10"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></h4>
+<p>Назначение: корректное масштабирование на телефонах.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span> <span class="na">content</span><span class="o">=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="title"><code>&lt;title&gt;</code></h4>
+<p>Назначение: название вкладки браузера/закладки.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>ServiceDesk — оформление заявки<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="meta-namedescription-content"><code>&lt;meta name="description" content="..."&gt;</code></h4>
+<p>Назначение: краткое описание страницы (часто используется в сниппетах поиска).</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"description"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Страница по предметной области ServiceDesk: услуги, регламент, таблица заявок и форма обращения."</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="meta-nameauthor-content"><code>&lt;meta name="author" content="..."&gt;</code></h4>
+<p>Назначение: автор страницы (метаданные).</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"author"</span> <span class="na">content</span><span class="o">=</span><span class="s">"Иванова А.А., ДБИ-281рсобф"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="link-relicon-href"><code>&lt;link rel="icon" href="..."&gt;</code></h4>
+<p>Назначение: иконка сайта (favicon).</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"icon"</span> <span class="na">href</span><span class="o">=</span><span class="s">"assets/favicon.ico"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="_2">Дополнительные (одно на выбор)</h4>
+<h5 id="base-href"><code>&lt;base href="..."&gt;</code></h5>
+<p>Назначение: задаёт базовый URL для относительных ссылок (аккуратно: влияет на все ссылки).</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">"/site/"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h5 id="meta-namekeywords-content"><code>&lt;meta name="keywords" content="..."&gt;</code></h5>
+<p>Назначение: список ключевых слов.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"keywords"</span> <span class="na">content</span><span class="o">=</span><span class="s">"ServiceDesk, заявки, поддержка, регламент, SLA"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h5 id="meta-nametheme-color-content"><code>&lt;meta name="theme-color" content="#..."&gt;</code></h5>
+<p>Назначение: цвет интерфейса браузера на мобильных.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"theme-color"</span> <span class="na">content</span><span class="o">=</span><span class="s">"#dc143c"</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="13-body">1.3. Семантическая структура страницы (body)</h3>
+<h4 id="header"><code>&lt;header&gt;</code></h4>
+<p>Назначение: “шапка” страницы или раздела.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">header</span> <span class="na">id</span><span class="o">=</span><span class="s">"top"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>ServiceDesk<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Портал регистрации и обработки обращений пользователей.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="nav"><code>&lt;nav&gt;</code></h4>
+<p>Назначение: навигация по странице/сайту.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">nav</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Навигация по разделам"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#about"</span><span class="p">&gt;</span>О системе<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#services"</span><span class="p">&gt;</span>Услуги<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#table"</span><span class="p">&gt;</span>Таблица заявок<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#form"</span><span class="p">&gt;</span>Форма обращения<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="main-idmain"><code>&lt;main id="main"&gt;</code></h4>
+<p>Назначение: уникальное основное содержимое страницы (должен быть один <code>main</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">main</span> <span class="na">id</span><span class="o">=</span><span class="s">"main"</span><span class="p">&gt;</span>
+ <span class="cm">&lt;!-- основной контент --&gt;</span>
+<span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="section"><code>&lt;section&gt;</code></h4>
+<p>Назначение: логический раздел с тематикой.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">section</span> <span class="na">id</span><span class="o">=</span><span class="s">"about"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Описание предметной области<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Система фиксирует обращения, назначает исполнителя и контролирует SLA.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="article"><code>&lt;article&gt;</code></h4>
+<p>Назначение: самостоятельная единица контента.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">article</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Услуга: Сброс пароля<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Оформляется пользователем через форму. Исполнитель: администратор домена.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">article</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="aside"><code>&lt;aside&gt;</code></h4>
+<p>Назначение: дополнительный контент.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">aside</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Быстрые подсказки<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>SLA:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> критические заявки — до 4 часов.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">aside</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="footer"><code>&lt;footer&gt;</code></h4>
+<p>Назначение: подвал страницы.</p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>© 2026 Учебный проект<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">address</span><span class="p">&gt;</span>
+ Контакты: <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"mailto:support@example.com"</span><span class="p">&gt;</span>support@example.com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">address</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="14">1.4. Заголовки, текст и смысловые теги</h3>
+<h4 id="_3">Заголовки</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>ServiceDesk<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Регламент обработки обращений<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>Критичность и сроки<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="_4">Абзац</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Заявка — это обращение пользователя в службу поддержки с описанием проблемы.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h3 id="br"><code>&lt;br&gt;</code></h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>График работы: Пн–Пт<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>09:00–18:00<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="hr"><code>&lt;hr&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">hr</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="strong"><code>&lt;strong&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Важно:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> заполните тему заявки и контактный телефон.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="em"><code>&lt;em&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>В поле “Описание” укажите <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>шаги воспроизведения<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span> проблемы.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="mark"><code>&lt;mark&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Статус <span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>Критический<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span> требует обработки в приоритетном порядке.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="small"><code>&lt;small&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>Примечание: срок SLA может отличаться по договору.<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="sub-sup"><code>&lt;sub&gt;</code> и <code>&lt;sup&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Показатель доступности: 99.9<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>%<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Формула: H<span class="p">&lt;</span><span class="nt">sub</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">sub</span><span class="p">&gt;</span>O<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="abbr"><code>&lt;abbr&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">abbr</span> <span class="na">title</span><span class="o">=</span><span class="s">"Service Level Agreement"</span><span class="p">&gt;</span>SLA<span class="p">&lt;/</span><span class="nt">abbr</span><span class="p">&gt;</span> — целевой уровень сервиса.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="time"><code>&lt;time&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Последнее обновление регламента: <span class="p">&lt;</span><span class="nt">time</span> <span class="na">datetime</span><span class="o">=</span><span class="s">"2026-02-17"</span><span class="p">&gt;</span>17.02.2026<span class="p">&lt;/</span><span class="nt">time</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="cite"><code>&lt;cite&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Источник: <span class="p">&lt;</span><span class="nt">cite</span><span class="p">&gt;</span>Регламент обработки обращений, версия 1.0<span class="p">&lt;/</span><span class="nt">cite</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="q"><code>&lt;q&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Пользователь сообщил: <span class="p">&lt;</span><span class="nt">q</span><span class="p">&gt;</span>Не могу войти в систему после обновления<span class="p">&lt;/</span><span class="nt">q</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="blockquote"><code>&lt;blockquote&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+ При критической заявке необходимо немедленно назначить ответственного и уведомить пользователя о сроках.
+<span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="precode"><code>&lt;pre&gt;&lt;code&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;&lt;</span><span class="nt">code</span><span class="p">&gt;</span><span class="ni">&amp;lt;</span>form method="post" action="#"<span class="ni">&amp;gt;</span>
+ <span class="ni">&amp;lt;</span>input type="email" required<span class="ni">&amp;gt;</span>
+<span class="ni">&amp;lt;</span>/form<span class="ni">&amp;gt;</span><span class="p">&lt;/</span><span class="nt">code</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="kbd"><code>&lt;kbd&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Откройте поиск на странице: <span class="p">&lt;</span><span class="nt">kbd</span><span class="p">&gt;</span>Ctrl<span class="p">&lt;/</span><span class="nt">kbd</span><span class="p">&gt;</span> + <span class="p">&lt;</span><span class="nt">kbd</span><span class="p">&gt;</span>F<span class="p">&lt;/</span><span class="nt">kbd</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="samp"><code>&lt;samp&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Сообщение системы: <span class="p">&lt;</span><span class="nt">samp</span><span class="p">&gt;</span>Заявка #1042 создана<span class="p">&lt;/</span><span class="nt">samp</span><span class="p">&gt;</span>.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="var"><code>&lt;var&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Пусть <span class="p">&lt;</span><span class="nt">var</span><span class="p">&gt;</span>t<span class="p">&lt;/</span><span class="nt">var</span><span class="p">&gt;</span> — время реакции, тогда SLA выполняется при <span class="p">&lt;</span><span class="nt">var</span><span class="p">&gt;</span>t<span class="p">&lt;/</span><span class="nt">var</span><span class="p">&gt;</span> ≤ 4 часа.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="span"><code>&lt;span&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Статус: <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>В работе<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="div"><code>&lt;div&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Этот блок объединяет элементы карточки без отдельного семантического смысла.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="15">1.5. Списки</h3>
+<h4 id="ul"><code>&lt;ul&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Пользователь<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Оператор<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Администратор<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="ol"><code>&lt;ol&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Пользователь создаёт заявку<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Система присваивает номер<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Оператор классифицирует<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Назначается исполнитель<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Заявка закрывается с результатом<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="_5">Вложенный список</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Инциденты
+  <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Сбой доступа<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Ошибка приложения<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="dl"><code>&lt;dl&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>Инцидент<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>Непредвиденный сбой, нарушающий работу сервиса.<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="16">1.6. Ссылки</h3>
+<h4 id="_6">Внешняя</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://validator.w3.org/"</span> <span class="na">target</span><span class="o">=</span><span class="s">"_blank"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"noopener noreferrer"</span><span class="p">&gt;</span>
+ Валидатор HTML
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="_7">Внутренняя</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#form"</span><span class="p">&gt;</span>Перейти к форме<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="_8">Наверх</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"#top"</span><span class="p">&gt;</span>Наверх<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="mailto">mailto</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"mailto:support@example.com"</span><span class="p">&gt;</span>support@example.com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="tel">tel</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"tel:+79990001122"</span><span class="p">&gt;</span>+7 (999) 000-11-22<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="17">1.7. Изображения и медиа</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/logo.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Логотип ServiceDesk"</span> <span class="na">width</span><span class="o">=</span><span class="s">"140"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/scheme.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Схема обработки заявки"</span> <span class="na">loading</span><span class="o">=</span><span class="s">"lazy"</span> <span class="na">width</span><span class="o">=</span><span class="s">"600"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="figure"><code>&lt;figure&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">figure</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/scheme.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Схема процесса обработки заявки"</span> <span class="na">width</span><span class="o">=</span><span class="s">"600"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Рисунок 1 — Схема обработки заявки<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="picture"><code>&lt;picture&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">"assets/banner.webp"</span> <span class="na">type</span><span class="o">=</span><span class="s">"image/webp"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/banner.jpg"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Баннер портала заявок"</span> <span class="na">width</span><span class="o">=</span><span class="s">"800"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="audio"><code>&lt;audio&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">audio</span> <span class="na">controls</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/notification.mp3"</span> <span class="na">type</span><span class="o">=</span><span class="s">"audio/mpeg"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">audio</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="video"><code>&lt;video&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">video</span> <span class="na">controls</span> <span class="na">width</span><span class="o">=</span><span class="s">"640"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">source</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/demo.mp4"</span> <span class="na">type</span><span class="o">=</span><span class="s">"video/mp4"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">video</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="18">1.8. Встраивания</h3>
+<h4 id="iframe"><code>&lt;iframe&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">iframe</span>
+ <span class="na">src</span><span class="o">=</span><span class="s">"https://www.openstreetmap.org/export/embed.html?bbox=..."</span>
+ <span class="na">width</span><span class="o">=</span><span class="s">"600"</span> <span class="na">height</span><span class="o">=</span><span class="s">"350"</span>
+ <span class="na">title</span><span class="o">=</span><span class="s">"Карта расположения офиса"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="embed"><code>&lt;embed&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">embed</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/reglament.pdf"</span> <span class="na">type</span><span class="o">=</span><span class="s">"application/pdf"</span> <span class="na">width</span><span class="o">=</span><span class="s">"600"</span> <span class="na">height</span><span class="o">=</span><span class="s">"400"</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="object"><code>&lt;object&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">"assets/reglament.pdf"</span> <span class="na">type</span><span class="o">=</span><span class="s">"application/pdf"</span> <span class="na">width</span><span class="o">=</span><span class="s">"600"</span> <span class="na">height</span><span class="o">=</span><span class="s">"400"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>PDF не отображается. Скачайте файл<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="noscript"><code>&lt;noscript&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">noscript</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Примечание:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> В вашем браузере отключён JavaScript.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">noscript</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="canvas"><code>&lt;canvas&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">width</span><span class="o">=</span><span class="s">"300"</span> <span class="na">height</span><span class="o">=</span><span class="s">"120"</span><span class="p">&gt;</span>
+ Ваш браузер не поддерживает canvas.
+<span class="p">&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="svg"><code>&lt;svg&gt;</code></h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">"24"</span> <span class="na">height</span><span class="o">=</span><span class="s">"24"</span> <span class="na">aria-label</span><span class="o">=</span><span class="s">"Иконка заявки"</span> <span class="na">role</span><span class="o">=</span><span class="s">"img"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">circle</span> <span class="na">cx</span><span class="o">=</span><span class="s">"12"</span> <span class="na">cy</span><span class="o">=</span><span class="s">"12"</span> <span class="na">r</span><span class="o">=</span><span class="s">"10"</span><span class="p">&gt;&lt;/</span><span class="nt">circle</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="19">1.9. Таблица</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>Таблица заявок<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">"col"</span><span class="p">&gt;</span>№<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">"col"</span><span class="p">&gt;</span>Тема<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">"col"</span><span class="p">&gt;</span>Статус<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">"col"</span><span class="p">&gt;</span>Срок (SLA)<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">th</span> <span class="na">scope</span><span class="o">=</span><span class="s">"row"</span><span class="p">&gt;</span>1042<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>Сброс пароля<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>В работе<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>4 часа<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">"4"</span><span class="p">&gt;</span>Итого заявок: 1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">tfoot</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="110">1.10. Форма (расширенная)</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">"form"</span> <span class="na">method</span><span class="o">=</span><span class="s">"post"</span> <span class="na">action</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Данные пользователя<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"fullname"</span><span class="p">&gt;</span>ФИО<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">"fullname"</span> <span class="na">name</span><span class="o">=</span><span class="s">"fullname"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">required</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"email"</span><span class="p">&gt;</span>Email<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"email"</span> <span class="na">id</span><span class="o">=</span><span class="s">"email"</span> <span class="na">required</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"phone"</span><span class="p">&gt;</span>Телефон<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"tel"</span> <span class="na">id</span><span class="o">=</span><span class="s">"phone"</span> <span class="na">pattern</span><span class="o">=</span><span class="s">"^\+?\d{10,15}$"</span> <span class="na">required</span><span class="p">&gt;</span>
+
+ <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+ <span class="p">&lt;</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">legend</span><span class="p">&gt;</span>Данные заявки<span class="p">&lt;/</span><span class="nt">legend</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">"desc"</span><span class="p">&gt;</span>Описание<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">id</span><span class="o">=</span><span class="s">"desc"</span> <span class="na">required</span> <span class="na">minlength</span><span class="o">=</span><span class="s">"30"</span> <span class="na">maxlength</span><span class="o">=</span><span class="s">"500"</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+
+  <span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"checkbox"</span> <span class="na">required</span><span class="p">&gt;</span> Согласен с обработкой данных
+  <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+
+ <span class="p">&lt;/</span><span class="nt">fieldset</span><span class="p">&gt;</span>
+
+ <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="p">&gt;</span>Отправить<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"reset"</span><span class="p">&gt;</span>Очистить<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h2 id="2">2. Задание</h2>
+<h3 id="21-html-head">2.1. Создайте каркас HTML-документа и метаданные (head)</h3>
+<p>Создайте файл <code>index.html</code>. В документе <strong>обязательно</strong> должны присутствовать:</p>
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code></li>
+<li><code>&lt;html lang="ru"&gt;</code></li>
+<li><code>&lt;head&gt; … &lt;/head&gt;</code></li>
+<li><code>&lt;meta charset="utf-8"&gt;</code></li>
+<li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></li>
+<li><code>&lt;title&gt;…&lt;/title&gt;</code></li>
+<li><code>&lt;meta name="description" content="..."&gt;</code></li>
+<li><code>&lt;meta name="author" content="..."&gt;</code></li>
+<li><code>&lt;link rel="icon" href="..."&gt;</code></li>
+</ul>
+<p><strong>Дополнительно (выбрать 1 из 3):</strong></p>
+<ul>
+<li><code>&lt;base href="..."&gt;</code> (если используете структуру папок и относительные ссылки), <strong>или</strong></li>
+<li><code>&lt;meta name="keywords" content="..."&gt;</code>, <strong>или</strong></li>
+<li><code>&lt;meta name="theme-color" content="#..."&gt;</code></li>
+</ul>
+<hr>
+<h3 id="22-body">2.2. Реализуйте семантическую структуру страницы (body)</h3>
+<p>В <code>body</code> <strong>обязательно</strong> применить следующие теги:</p>
+<ul>
+<li><code>&lt;header&gt;</code> — шапка страницы (название + краткое описание предметной области)</li>
+<li><code>&lt;nav&gt;</code> — меню с внутренними якорями</li>
+<li><code>&lt;main id="main"&gt;</code> — основной контент</li>
+<li>минимум <strong>2×</strong> <code>&lt;section&gt;</code></li>
+<li>минимум <strong>1×</strong> <code>&lt;article&gt;</code></li>
+<li><code>&lt;aside&gt;</code> — боковой блок (быстрые факты/термины/подсказки)</li>
+<li><code>&lt;footer&gt;</code> — подвал</li>
+</ul>
+<p><strong>Дополнительно обязательно применить:</strong></p>
+<ul>
+<li><code>&lt;address&gt;</code> — контактные данные (в <code>footer</code> или отдельной секции)</li>
+</ul>
+<hr>
+<h3 id="23">2.3. Текстовая разметка (контент по предметной области)</h3>
+<p>Добавьте текст, связанный с предметной областью, применив:</p>
+<p><strong>Обязательные теги:</strong></p>
+<ul>
+<li>заголовки: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> (минимум по 1)</li>
+<li>абзацы: <code>&lt;p&gt;</code> (минимум 5)</li>
+<li>разделители: <code>&lt;br&gt;</code> (минимум 1 по смыслу), <code>&lt;hr&gt;</code> (минимум 1)</li>
+</ul>
+<p><strong>Смысловые и типографские теги (использовать все):</strong></p>
+<ul>
+<li><code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code></li>
+<li><code>&lt;mark&gt;</code>, <code>&lt;small&gt;</code></li>
+<li><code>&lt;sub&gt;</code>, <code>&lt;sup&gt;</code></li>
+<li><code>&lt;abbr title="..."&gt;</code></li>
+<li><code>&lt;time datetime="YYYY-MM-DD"&gt;</code></li>
+<li><code>&lt;cite&gt;</code>, <code>&lt;q&gt;</code>, <code>&lt;blockquote&gt;</code></li>
+<li><code>&lt;pre&gt;&lt;code&gt;…&lt;/code&gt;&lt;/pre&gt;</code></li>
+<li><code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, <code>&lt;var&gt;</code></li>
+<li><code>&lt;span&gt;</code>, <code>&lt;div&gt;</code> (не вместо семантики, а точечно)</li>
+</ul>
+<hr>
+<h3 id="24">2.4. Списки (все основные виды)</h3>
+<p>Создайте:</p>
+<ol>
+<li><code>&lt;ol&gt;</code> — нумерованный список (минимум 5 пунктов)</li>
+<li><code>&lt;ul&gt;</code> — маркированный список (минимум 6 пунктов)</li>
+<li>вложенный список (минимум 2 уровня вложенности)</li>
+<li>список определений: <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code> (минимум 3 термина)</li>
+</ol>
+<hr>
+<h3 id="25">2.5. Ссылки и навигация</h3>
+<p>Добавьте:</p>
+<ul>
+<li>внешнюю ссылку <code>&lt;a href="https://..."&gt;</code> с <code>target="_blank"</code> и <code>rel="noopener noreferrer"</code></li>
+<li>внутренние якоря на разделы (оглавление)</li>
+<li>ссылку «Наверх» (<code>#top</code>)</li>
+<li><code>mailto:</code> ссылку (электронная почта)</li>
+<li><code>tel:</code> ссылку (телефон)</li>
+</ul>
+<hr>
+<h3 id="26">2.6. Изображения и медиа</h3>
+<p><strong>Обязательно:</strong></p>
+<ul>
+<li>
+<p><code>&lt;img&gt;</code> минимум 2:</p>
+</li>
+<li>
+<p>у всех <code>alt</code></p>
+</li>
+<li>у одного <code>loading="lazy"</code></li>
+<li><code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code> минимум 1 (подпись к изображению)</li>
+<li>адаптивная картинка: <code>&lt;picture&gt;</code> + <code>&lt;source&gt;</code> + <code>&lt;img&gt;</code> (1 раз)</li>
+</ul>
+<p><strong>Аудио/видео (1 из 2):</strong></p>
+<ul>
+<li><code>&lt;audio controls&gt;</code> <strong>или</strong></li>
+<li><code>&lt;video controls&gt;</code></li>
+</ul>
+<p>Если файлов нет, допускается заменить этот пункт на <code>&lt;iframe&gt;</code> (см. 2.7).</p>
+<hr>
+<h3 id="27-2">2.7. Встраивания и встроенный контент (минимум 2 элемента)</h3>
+<p>Выполните минимум 2 пункта:</p>
+<ul>
+<li><code>&lt;iframe&gt;</code> (карта/видео/страница)</li>
+<li><code>&lt;embed&gt;</code> (встраивание PDF)</li>
+<li><code>&lt;object&gt;</code> (альтернативное встраивание)</li>
+<li><code>&lt;noscript&gt;</code> (сообщение пользователю)</li>
+<li><code>&lt;canvas&gt;</code> (заглушка с пояснением назначения)</li>
+<li><code>&lt;svg&gt;</code> (простая иконка/фигура)</li>
+</ul>
+<hr>
+<h3 id="28">2.8. Таблица по предметной области (полный набор)</h3>
+<p>Создайте таблицу минимум на <strong>5 строк данных</strong> и <strong>4 колонки</strong>, используя:</p>
+<ul>
+<li><code>&lt;table&gt;</code>, <code>&lt;caption&gt;</code></li>
+<li><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></li>
+<li><code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code></li>
+<li><code>scope="col"</code> и <code>scope="row"</code></li>
+</ul>
+<p><strong>Дополнительно (1 из 2):</strong></p>
+<ul>
+<li>объединение ячеек <code>rowspan/colspan</code>, <strong>или</strong></li>
+<li>итоговая строка в <code>&lt;tfoot&gt;</code> (сумма/итог/количество)</li>
+</ul>
+<hr>
+<h3 id="29">2.9. Сложная форма (расширенная, “максимум типов”)</h3>
+<p>Форма должна соответствовать предметной области: <strong>заявка / заказ / регистрация / обращение / бронирование</strong>.</p>
+<p><strong>Структурные теги :</strong></p>
+<ul>
+<li><code>&lt;form method="post" action="#"&gt;</code></li>
+<li><code>&lt;fieldset&gt;</code> ×2</li>
+<li><code>&lt;legend&gt;</code> ×2</li>
+<li><code>&lt;label&gt;</code> для каждого поля</li>
+</ul>
+<p><strong>Требование по полям:</strong> использовать минимум <strong>14 разных элементов/типов</strong>, включая:</p>
+<p><strong>input (минимум 10 разных <code>type</code>):</strong></p>
+<ul>
+<li><code>text</code>, <code>email</code>, <code>password</code>, <code>number</code>, <code>tel</code>, <code>date</code>, <code>time</code>, <code>url</code>, <code>file</code>, <code>range</code></li>
+<li>дополнительно (можно, если уместно): <code>color</code>, <code>search</code>, <code>hidden</code></li>
+</ul>
+<p><strong>выбор и текст:</strong></p>
+<ul>
+<li><code>&lt;select&gt;</code> + <code>&lt;option&gt;</code> + <code>&lt;optgroup&gt;</code> (<code>optgroup</code> обязателен)</li>
+<li><code>&lt;textarea&gt;</code></li>
+</ul>
+<p><strong>переключатели:</strong></p>
+<ul>
+<li><code>radio</code> (3+ вариантов)</li>
+<li><code>checkbox</code> (2+ чекбокса, один — согласие <code>required</code>)</li>
+</ul>
+<p><strong>кнопки:</strong></p>
+<ul>
+<li><code>&lt;button type="submit"&gt;</code></li>
+<li><code>&lt;button type="reset"&gt;</code></li>
+</ul>
+<p><strong>Продвинутые элементы формы (выбрать 2 из 4):</strong></p>
+<ul>
+<li><code>&lt;datalist&gt;</code></li>
+<li><code>&lt;output&gt;</code></li>
+<li><code>&lt;progress&gt;</code></li>
+<li><code>&lt;meter&gt;</code></li>
+</ul>
+<p><strong>HTML-валидация :</strong></p>
+<ul>
+<li><code>required</code> минимум на 6 полях</li>
+<li><code>min/max</code> минимум на 2 полях</li>
+<li><code>minlength/maxlength</code> минимум на 2 полях</li>
+<li><code>pattern</code> минимум на 2 полях (телефон/пароль/код)</li>
+<li><code>autocomplete</code> минимум на 3 полях</li>
+<li><code>placeholder</code> по смыслу</li>
+</ul>
+<hr>
+<h3 id="210-html-javascript">2.10. HTML-интерактив без JavaScript</h3>
+<p>Добавьте:</p>
+<ul>
+<li><code>&lt;details&gt;</code> + <code>&lt;summary&gt;</code> — минимум 2 блока (FAQ/правила/подсказки)</li>
+<li><code>&lt;dialog&gt;</code> — как демонстрация структуры (открытие без JS не обязательно)</li>
+</ul>
+<hr>
+<h3 id="211">2.11. Проверка валидности</h3>
+<ol>
+<li>Проверить <code>index.html</code> в валидаторе W3C</li>
+<li>Исправить ошибки (<code>errors</code>)</li>
+<li>Сохранить скриншот результата проверки</li>
+</ol>
+<hr>
+<h3 id="212-github">2.12. Публикация результата на GitHub</h3>
+<p>Опубликуйте работу в репозитории GitHub.</p>
+<p><strong>Минимальная структура репозитория:</strong></p>
+<ul>
+<li><code>index.html</code></li>
+<li><code>assets/</code> (изображения/файлы, если используются)</li>
+<li><code>report/</code> (отчёт)</li>
+</ul>
+<p><strong>Требование:</strong> в отчёте указать ссылку на GitHub-репозиторий.</p>
+<hr>
+<h3 id="213">2.13. Для выполнения требуется</h3>
+<ul>
+<li>ПК, браузер (Chrome/Edge/Firefox)</li>
+<li>редактор (VS Code / Notepad++ и т.п.)</li>
+<li>валидатор HTML (по желанию, но проверка обязательна)</li>
+<li>GitHub-аккаунт для публикации</li>
+</ul>
+<hr>
+<h2 id="3">3. Контрольные вопросы</h2>
+<ol>
+<li>Чем отличается <code>&lt;section&gt;</code> от <code>&lt;article&gt;</code>?</li>
+<li>Зачем нужны <code>&lt;thead&gt;/&lt;tbody&gt;/&lt;tfoot&gt;</code>?</li>
+<li>Что даёт связка <code>&lt;label for&gt;</code> + <code>id</code>?</li>
+<li>В чём преимущество <code>&lt;picture&gt;</code> над одиночным <code>&lt;img&gt;</code>?</li>
+<li>Когда уместны <code>&lt;details&gt;/&lt;summary&gt;</code>?</li>
+</ol>
+<hr>
+<h2 id="4-">4. Чек-лист для самопроверки</h2>
+<table>
+<thead>
+<tr>
+<th>Баллы</th>
+<th>Критерии выполнения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>Выполнены все пункты 2.1–2.12</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Почти всё выполнено</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Выполнены базовые разделы</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Страница частично выполнена</td>
+</tr>
+<tr>
+<td>0</td>
+<td>Работа скопирована или выполнена с помощью ИИ</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5">5. Для выполнения требуется</h2>
+<ol>
+<li><strong>Шаблон отчёта</strong>, указанный в описании лабораторной работы.</li>
+<li><strong>Вариант задания</strong>, закреплённый за студентом на семестр и опубликованный в ЛМС.</li>
+<li><strong>Требования к оформлению</strong> — согласно методическим указаниям в ЛМС или соответствующему разделу документации.</li>
+</ol>
+<hr>
+<h2 id="6">6. Формат сдачи работы</h2>
+<ol>
+<li><code>index.html</code></li>
+<li>Отчёт <code>.docx</code> или <code>.pdf</code></li>
+<li>Ссылка на GitHub-репозиторий</li>
+<li>Архив <code>LR1_Фамилия_Группа.zip</code></li>
+</ol>
+<hr>
+<h2 id="7">7. Запрет</h2>
+<p>❗ <strong>Запрещается использование систем искусственного интеллекта для выполнения лабораторной работы.</strong></p>
+<p>Работы, выполненные с использованием ИИ, полностью или частично скопированные, а также не сданные, оцениваются в <strong>0 баллов</strong> без возможности доработки.</p>
+<hr>
+<h2 id="8">8. Шаблон отчёта</h2>
+<p>👉 <a href="assets/files/LR2%20%28Shablon%29.docx">Скачать шаблон отчёта</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "content.image.zoom", "navigation.top", "navigation.tracking", "toc.follow"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="assets/js/mermaid-init.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
