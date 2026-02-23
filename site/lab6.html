@@ -1,0 +1,1835 @@
+<!DOCTYPE html><html lang="ru" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="lab5.html">
+      
+      
+        <link rel="next" href="lab7.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/icons/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Лабораторная работа 6 - Проектирование и разработка интерфейсов пользователя</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no6" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
+    <a href="index.html" title="Проектирование и разработка интерфейсов пользователя" class="md-header__button md-logo" aria-label="Проектирование и разработка интерфейсов пользователя" data-md-component="logo">
+      
+  <img src="assets/icons/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Проектирование и разработка интерфейсов пользователя
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Лабораторная работа 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Поиск">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Инициализация поиска
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Проектирование и разработка интерфейсов пользователя" class="md-nav__button md-logo" aria-label="Проектирование и разработка интерфейсов пользователя" data-md-component="logo">
+      
+  <img src="assets/icons/logo.png" alt="logo">
+
+    </a>
+    Проектирование и разработка интерфейсов пользователя
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Описание дисциплины
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="domain.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Предметная область
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторные работы
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторные работы
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 6
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lab6.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Почему “графика” влияет на производительность UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-webp-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. WebP + fallback: современный формат без потерь качества
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. WebP + fallback: современный формат без потерь качества">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#picture-webp-jpeg-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример: &lt;picture&gt; WebP + JPEG fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-svg-sprite-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. SVG-иконки: sprite или inline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-inline-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вариант A: inline SVG (быстро и просто)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Вариант A: inline SVG (быстро и просто)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b-svg-sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вариант B: SVG sprite (один файл на все иконки)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-lazy-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Lazy loading изображений
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. Lazy loading изображений">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lazy-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример: нативный lazy loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-responsive-images-srcset-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Responsive images: srcset + sizes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5. Responsive images: srcset + sizes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#srcset-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример: srcset + sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Минимизация размеров изображений (качество, размеры, вес)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6. Минимизация размеров изображений (качество, размеры, вес)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример требований (в отчёт)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-hero-lcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7. Оптимизация hero-блока (LCP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7. Оптимизация hero-блока (LCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример hero с приоритетом
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-lighthouse-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8. Lighthouse Performance: как анализировать
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8. Lighthouse Performance: как анализировать">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что обязательно зафиксировать в отчёте
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Задания
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Задания">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Подготовка проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-webp-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. WebP + fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-svg-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. SVG-иконки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-lazy-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Lazy loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-responsive-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Responsive images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Минимизация размеров изображений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-hero-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. Оптимизация hero-блока
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-lighthouse-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8. Lighthouse Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9. Публикация результата
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Контрольные вопросы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Чек-лист для самопроверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Для выполнения требуется
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Формат сдачи работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Запрет
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Шаблон отчёта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторная работа 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="requirements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования для оформления
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Цель
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теория
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Теория">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Почему “графика” влияет на производительность UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-webp-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. WebP + fallback: современный формат без потерь качества
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2. WebP + fallback: современный формат без потерь качества">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#picture-webp-jpeg-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример: &lt;picture&gt; WebP + JPEG fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-svg-sprite-inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. SVG-иконки: sprite или inline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-inline-svg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вариант A: inline SVG (быстро и просто)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Вариант A: inline SVG (быстро и просто)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#b-svg-sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вариант B: SVG sprite (один файл на все иконки)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-lazy-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Lazy loading изображений
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4. Lazy loading изображений">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lazy-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример: нативный lazy loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-responsive-images-srcset-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Responsive images: srcset + sizes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5. Responsive images: srcset + sizes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#srcset-sizes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример: srcset + sizes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6. Минимизация размеров изображений (качество, размеры, вес)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6. Минимизация размеров изображений (качество, размеры, вес)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример требований (в отчёт)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-hero-lcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7. Оптимизация hero-блока (LCP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.7. Оптимизация hero-блока (LCP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Пример hero с приоритетом
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-lighthouse-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8. Lighthouse Performance: как анализировать
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8. Lighthouse Performance: как анализировать">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Что обязательно зафиксировать в отчёте
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Задания
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Задания">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Подготовка проекта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-webp-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. WebP + fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-svg-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. SVG-иконки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-lazy-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Lazy loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-responsive-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Responsive images
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Минимизация размеров изображений
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-hero-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. Оптимизация hero-блока
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28-lighthouse-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.8. Lighthouse Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.9. Публикация результата
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Контрольные вопросы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Чек-лист для самопроверки
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Для выполнения требуется
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Формат сдачи работы
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Запрет
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Шаблон отчёта
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no6">Лабораторная работа №6 — Оптимизация графики и визуальной производительности интерфейса</h1>
+<hr>
+<h2 id="_1">Цель</h2>
+<p>Оптимизировать графику и визуальную производительность интерфейса по индивидуальной предметной области (сервис №1–30), реализовав:</p>
+<ul>
+<li>изображения <strong>WebP + fallback</strong>;</li>
+<li><strong>SVG-иконки</strong> (inline или sprite);</li>
+<li><strong>lazy loading</strong> для изображений;</li>
+<li><strong>responsive images</strong> (<code>srcset</code>, <code>sizes</code>);</li>
+<li>минимизацию размеров (качество/разрешение/вес);</li>
+<li>оптимизацию <strong>hero-блока</strong> (LCP);</li>
+<li>анализ <strong>Lighthouse Performance</strong> и фиксацию улучшений.</li>
+</ul>
+<hr>
+<h2 id="1">1. Теория</h2>
+<h3 id="11-ui">1.1. Почему “графика” влияет на производительность UI</h3>
+<p>Основные метрики, которые страдают из-за картинок:</p>
+<ul>
+<li><strong>LCP (Largest Contentful Paint)</strong> — часто это hero-картинка/баннер.</li>
+<li><strong>CLS (Cumulative Layout Shift)</strong> — скачки из-за отсутствия размеров у <code>&lt;img&gt;</code>.</li>
+<li><strong>TBT/INP</strong> — косвенно (тяжелый CSS/JS, но картинки тоже влияют через сеть).</li>
+</ul>
+<p>Главная идея: <strong>показываем быстро то, что видно сразу</strong>, а остальное грузим позже и легче.</p>
+<hr>
+<h3 id="12-webp-fallback">1.2. WebP + fallback: современный формат без потерь качества</h3>
+<p>WebP обычно даёт меньший размер файла при сопоставимом качестве.
+Fallback нужен для совместимости (если браузер не поддерживает WebP или вы даёте запасной формат).</p>
+<h4 id="picture-webp-jpeg-fallback">Пример: <code>&lt;picture&gt;</code> WebP + JPEG fallback</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">"assets/hero.webp"</span> <span class="na">type</span><span class="o">=</span><span class="s">"image/webp"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/hero.jpg"</span> <span class="na">width</span><span class="o">=</span><span class="s">"1200"</span> <span class="na">height</span><span class="o">=</span><span class="s">"600"</span>
+       <span class="na">alt</span><span class="o">=</span><span class="s">"Hero-блок сервиса"</span> <span class="na">decoding</span><span class="o">=</span><span class="s">"async"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>Важно для CLS:</strong> задавайте <code>width</code> и <code>height</code>.</p>
+<hr>
+<h3 id="13-svg-sprite-inline">1.3. SVG-иконки: sprite или inline</h3>
+<p>SVG лучше для UI-иконок:</p>
+<ul>
+<li>масштабируется без пикселей,</li>
+<li>небольшой вес,</li>
+<li>можно менять цвет через CSS.</li>
+</ul>
+<h3 id="a-inline-svg">Вариант A: inline SVG (быстро и просто)</h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">"20"</span> <span class="na">height</span><span class="o">=</span><span class="s">"20"</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">"0 0 24 24"</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">"M3 12h18"</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">"M12 3v18"</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+  Добавить
+<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="b-svg-sprite">Вариант B: SVG sprite (один файл на все иконки)</h4>
+<p><strong>sprite.svg</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">"http://www.w3.org/2000/svg"</span> <span class="na">style</span><span class="o">=</span><span class="s">"display:none"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">symbol</span> <span class="na">id</span><span class="o">=</span><span class="s">"i-search"</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">"0 0 24 24"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">"M10 18a8 8 0 1 1 0-16a8 8 0 0 1 0 16Z"</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">path</span> <span class="na">d</span><span class="o">=</span><span class="s">"M21 21l-4.3-4.3"</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">symbol</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><strong>использование</strong></p>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">svg</span> <span class="na">width</span><span class="o">=</span><span class="s">"20"</span> <span class="na">height</span><span class="o">=</span><span class="s">"20"</span> <span class="na">aria-hidden</span><span class="o">=</span><span class="s">"true"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">use</span> <span class="na">href</span><span class="o">=</span><span class="s">"#i-search"</span><span class="p">&gt;&lt;/</span><span class="nt">use</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="14-lazy-loading">1.4. Lazy loading изображений</h3>
+<p>Lazy loading = грузить картинки <strong>когда они попадают в область видимости</strong>.</p>
+<h4 id="lazy-loading">Пример: нативный lazy loading</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/card-1.webp"</span>
+     <span class="na">alt</span><span class="o">=</span><span class="s">"Карточка"</span>
+     <span class="na">loading</span><span class="o">=</span><span class="s">"lazy"</span>
+     <span class="na">decoding</span><span class="o">=</span><span class="s">"async"</span>
+     <span class="na">width</span><span class="o">=</span><span class="s">"480"</span> <span class="na">height</span><span class="o">=</span><span class="s">"320"</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li><code>loading="lazy"</code> — откладывает загрузку.</li>
+<li><code>decoding="async"</code> — браузер декодирует без блокировки.</li>
+</ul>
+<hr>
+<h3 id="15-responsive-images-srcset-sizes">1.5. Responsive images: srcset + sizes</h3>
+<p>Одна и та же картинка должна грузиться разного размера под разные экраны.</p>
+<h4 id="srcset-sizes">Пример: srcset + sizes</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">img</span>
+  <span class="na">src</span><span class="o">=</span><span class="s">"assets/product-800.webp"</span>
+  <span class="na">srcset</span><span class="o">=</span><span class="s">"</span>
+<span class="s">    assets/product-400.webp 400w,</span>
+<span class="s">    assets/product-800.webp 800w,</span>
+<span class="s">    assets/product-1200.webp 1200w</span>
+<span class="s">  "</span>
+  <span class="na">sizes</span><span class="o">=</span><span class="s">"(max-width: 600px) 90vw, (max-width: 1024px) 45vw, 30vw"</span>
+  <span class="na">alt</span><span class="o">=</span><span class="s">"Изображение товара"</span>
+  <span class="na">loading</span><span class="o">=</span><span class="s">"lazy"</span>
+  <span class="na">decoding</span><span class="o">=</span><span class="s">"async"</span>
+  <span class="na">width</span><span class="o">=</span><span class="s">"800"</span> <span class="na">height</span><span class="o">=</span><span class="s">"600"</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Смысл:</p>
+<ul>
+<li><code>srcset</code> — какие варианты есть,</li>
+<li><code>sizes</code> — сколько места займёт на разных ширинах экрана.</li>
+</ul>
+<hr>
+<h3 id="16">1.6. Минимизация размеров изображений (качество, размеры, вес)</h3>
+<p>Оптимизация изображения включает:</p>
+<ul>
+<li><strong>уменьшение пикселей</strong> (не грузить 4000px, если нужно 800px);</li>
+<li>подбор качества (например, WebP quality 70–85);</li>
+<li>удаление метаданных (EXIF);</li>
+<li>выбор правильного формата (фото → WebP/JPEG, графика → SVG/PNG/WebP).</li>
+</ul>
+<h4 id="_2">Пример требований (в отчёт)</h4>
+<div class="highlight"><pre><span></span><code>До: hero.jpg 2400×1200, 1.8 MB
+После: hero.webp 1600×800, 220 KB
+</code></pre></div>
+<hr>
+<h3 id="17-hero-lcp">1.7. Оптимизация hero-блока (LCP)</h3>
+<p>Hero — главный кандидат на LCP. Цель: чтобы он загрузился <strong>первым и быстро</strong>.</p>
+<p>Что делать:</p>
+<ul>
+<li>hero изображение — не lazy (оно above the fold);</li>
+<li>указать размеры;</li>
+<li>возможно <code>fetchpriority="high"</code> (если нужно ускорить LCP).</li>
+</ul>
+<h4 id="hero">Пример hero с приоритетом</h4>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">source</span> <span class="na">srcset</span><span class="o">=</span><span class="s">"assets/hero-1600.webp"</span> <span class="na">type</span><span class="o">=</span><span class="s">"image/webp"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"assets/hero-1600.jpg"</span>
+       <span class="na">alt</span><span class="o">=</span><span class="s">"Главный баннер"</span>
+       <span class="na">width</span><span class="o">=</span><span class="s">"1600"</span> <span class="na">height</span><span class="o">=</span><span class="s">"800"</span>
+       <span class="na">decoding</span><span class="o">=</span><span class="s">"async"</span>
+       <span class="na">fetchpriority</span><span class="o">=</span><span class="s">"high"</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">picture</span><span class="p">&gt;</span>
+</code></pre></div>
+<hr>
+<h3 id="18-lighthouse-performance">1.8. Lighthouse Performance: как анализировать</h3>
+<p>В Lighthouse фиксируем:</p>
+<ul>
+<li>Performance score;</li>
+<li>LCP (время);</li>
+<li>объём переданных данных (transfer size);</li>
+<li>рекомендации (properly size images, next-gen formats, defer offscreen images).</li>
+</ul>
+<h4 id="_3">Что обязательно зафиксировать в отчёте</h4>
+<ol>
+<li>Скрин “до”.</li>
+<li>Скрин “после”.</li>
+<li>Таблица улучшений (минимум 3 пункта).</li>
+</ol>
+<hr>
+<h2 id="2">2. Задания</h2>
+<blockquote>
+<p>Предметная область — сервис №1–30. Оптимизация выполняется на странице интерфейса (каталог/дашборд/сервис).</p>
+</blockquote>
+<hr>
+<h3 id="21">2.1. Подготовка проекта</h3>
+<p>Структура:</p>
+<div class="highlight"><pre><span></span><code>lr6/
+  index.html
+  assets/
+    img/
+    icons/
+  report/
+</code></pre></div>
+<hr>
+<h3 id="22-webp-fallback">2.2. WebP + fallback</h3>
+<ol>
+<li>Подготовить минимум <strong>3 изображения</strong> в WebP.</li>
+<li>Для каждого — обеспечить fallback через <code>&lt;picture&gt;</code>.</li>
+</ol>
+<hr>
+<h3 id="23-svg-">2.3. SVG-иконки</h3>
+<p>Использовать минимум <strong>5 иконок</strong>:</p>
+<ul>
+<li>sprite или inline — на выбор,</li>
+<li>цвета должны управляться через CSS (fill/stroke).</li>
+</ul>
+<hr>
+<h3 id="24-lazy-loading">2.4. Lazy loading</h3>
+<ol>
+<li>Все изображения ниже первого экрана — <code>loading="lazy"</code>.</li>
+<li>Добавить <code>decoding="async"</code>.</li>
+</ol>
+<hr>
+<h3 id="25-responsive-images">2.5. Responsive images</h3>
+<p>Минимум <strong>2 изображения</strong> должны иметь:</p>
+<ul>
+<li><code>srcset</code> (минимум 3 размера),</li>
+<li><code>sizes</code>.</li>
+</ul>
+<hr>
+<h3 id="26">2.6. Минимизация размеров изображений</h3>
+<p>Сделать таблицу “до/после” минимум на 3 изображения:</p>
+<ul>
+<li>размеры в px,</li>
+<li>вес в KB/MB.</li>
+</ul>
+<hr>
+<h3 id="27-hero-">2.7. Оптимизация hero-блока</h3>
+<p>Hero-блок должен:</p>
+<ul>
+<li>иметь заданные <code>width/height</code>;</li>
+<li>грузиться приоритетно (не lazy);</li>
+<li>быть в WebP + fallback.</li>
+</ul>
+<hr>
+<h3 id="28-lighthouse-performance">2.8. Lighthouse Performance</h3>
+<ol>
+<li>Запустить Lighthouse (Performance) “до”.</li>
+<li>Внести оптимизации.</li>
+<li>Запустить Lighthouse “после”.</li>
+<li>
+<p>Приложить скрины и краткий вывод:</p>
+</li>
+<li>
+<p>что улучшилось;</p>
+</li>
+<li>какие 2 рекомендации Lighthouse исчезли.</li>
+</ol>
+<hr>
+<h3 id="29">2.9. Публикация результата</h3>
+<ul>
+<li>GitHub-репозиторий.</li>
+<li>Ссылка в отчёте.</li>
+<li>При необходимости — GitHub Pages.</li>
+</ul>
+<hr>
+<h2 id="3">3. Контрольные вопросы</h2>
+<ol>
+<li>Зачем нужен <code>&lt;picture&gt;</code>?</li>
+<li>Что делает <code>loading="lazy"</code>?</li>
+<li>Для чего <code>srcset</code> и <code>sizes</code>?</li>
+<li>Какое изображение стало LCP и что вы сделали для ускорения?</li>
+<li>Почему важно задавать <code>width</code> и <code>height</code> у <code>&lt;img&gt;</code>?</li>
+</ol>
+<hr>
+<h2 id="4-">4. Чек-лист для самопроверки</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Баллы</th>
+<th>Критерии выполнения</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Все пункты 2.1–2.9: WebP+fallback (3), SVG (5), lazy, srcset+sizes (2), таблица до/после (3), hero оптимизирован, Lighthouse до/после</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Почти всё выполнено, мелкие недочёты (например, 1 изображение без sizes или мало иконок)</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Есть оптимизации, но не системно (нет таблицы, слабый hero, Lighthouse без анализа)</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Частичная оптимизация (только WebP или только lazy)</td>
+</tr>
+<tr>
+<td style="text-align: right;">0</td>
+<td>Не соответствует заданию / нет доказательств Lighthouse / нет оптимизаций  / выполнена через ИИ</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5">5. Для выполнения требуется</h2>
+<ol>
+<li><strong>Шаблон отчёта</strong>, указанный в описании лабораторной работы.</li>
+<li><strong>Вариант задания</strong>, закреплённый за студентом на семестр и опубликованный в ЛМС.</li>
+<li><strong>Требования к оформлению</strong> — согласно методическим указаниям в ЛМС или соответствующему разделу документации.</li>
+</ol>
+<hr>
+<h2 id="6">6. Формат сдачи работы</h2>
+<ol>
+<li><code>index.html</code></li>
+<li><code>assets/img/*</code>, <code>assets/icons/*</code></li>
+<li>Отчёт <code>.docx</code> или <code>.pdf</code> (скрины Lighthouse + таблица до/после)</li>
+<li>Ссылка на GitHub-репозиторий</li>
+<li>Архив <code>LR6_Фамилия_Группа.zip</code></li>
+</ol>
+<h2 id="7">7. Запрет</h2>
+<p>❗ <strong>Запрещается использование систем искусственного интеллекта для выполнения лабораторной работы.</strong></p>
+<p>Работы, выполненные с использованием ИИ, полностью или частично скопированные, а также не сданные, оцениваются в <strong>0 баллов</strong> без возможности доработки.</p>
+<hr>
+<h2 id="8">8. Шаблон отчёта</h2>
+<p>👉 <a href="assets/files/LR6%20%28Shablon%29.docx">Скачать шаблон отчёта</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  К началу
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "content.image.zoom", "navigation.top", "navigation.tracking", "toc.follow"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="assets/js/mermaid-init.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
